@@ -49,9 +49,4 @@ The repo uses [vue-cli](https://github.com/vuejs/vue-cli) scaffolding which take
 - `npm install` or `yarn install`
 - Please don't use jQuery or jQuery based plugins since there are many pure Vue alternatives
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-[changelog]: ./CHANGELOG.md
-[license]: ./LICENSE.md
-[version-badge]: https://img.shields.io/badge/version-2.1.0-blue.svg
-[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
