@@ -19,8 +19,8 @@
         <p>Users List</p>
       </sidebar-link>
       <sidebar-link to="/admin/icons">
-        <i class="nc-icon nc-atom"></i>
-        <p>Icons</p>
+        <i class="nc-icon nc-grid-45"></i>
+        <p>Columns</p>
       </sidebar-link>
       <sidebar-link to="/admin/notifications">
         <i class="nc-icon nc-bell-55"></i>

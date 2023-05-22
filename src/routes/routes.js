@@ -12,7 +12,7 @@ import UsersList from 'src/pages/UsersList.vue'
 import UserProfile from 'src/pages/UserProfile.vue'
 import CreateUser from 'src/pages/CreateUser.vue'
 import CreateProject from 'src/pages/CreateProject.vue'
-
+import LoginPage from 'src/pages/LoginPage.vue'
 
 const routes = [
   {
@@ -72,6 +72,7 @@ const routes = [
       }
     ]
   },
+  { path: '/login', component: LoginPage },
   { path: '*', component: NotFound }
 ]
 

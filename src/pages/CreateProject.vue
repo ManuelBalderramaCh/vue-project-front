@@ -3,7 +3,7 @@
         <div class="container-fluid">
 
             <card>
-                <h4 slot="header" class="card-title">Project Management</h4>
+                <h4 slot="header" class="card-title">New Project</h4>
                 <form>
                     <div class="row">
                         <div class="col-md-5">
@@ -53,7 +53,7 @@
                                 <label>Description</label>
                                 <textarea rows="5" class="form-control border-input"
                                     placeholder="Here can be your description" v-model="project.description">
-                                                                                                                                                        </textarea>
+                                                                                                                                                            </textarea>
                             </div>
                         </div>
                     </div>
