@@ -61,16 +61,16 @@ const routes = [
         component: Notifications
       },
       {
-        path: 'create-user',
-        name: 'Create User',
-        component: CreateUser
-      },
-      {
         path: 'create-project',
         name: 'Create Project',
         component: CreateProject
       }
     ]
+  },
+  {
+    path: '/create-user',
+    name: 'Create User',
+    component: CreateUser
   },
   { path: '/login', component: LoginPage },
   { path: '*', component: NotFound }

@@ -25,9 +25,7 @@
             <a class="dropdown-item" href="#">Separated link</a>
           </base-dropdown>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              Log out
-            </a>
+            <router-link to="/login">Log Out</router-link>
           </li>
         </ul>
       </div>

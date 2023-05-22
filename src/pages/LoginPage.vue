@@ -1,17 +1,4 @@
 <template>
-    <!-- <div>
-        <h1>Login</h1>
-        <form v-on:submit.prevent="login">
-            <h3 v-show="msg">{{ msg }}</h3>
-            <label for="email">Email</label>
-            <input v-model="email" type="text" id="email" name="email">
-
-            <label for="password">Contraseña</label>
-            <input v-model="password" type="password" id="password" name="password">
-
-            <input type="submit" name="" value="Iniciar Sesion">
-        </form>
-    </div> -->
     <div class="wrapper fadeInDown">
         <div id="formContent">
             <!-- Tabs Titles -->
@@ -34,7 +21,7 @@
 
             <!-- Remind Passowrd -->
             <div id="formFooter">
-                <a class="underlineHover" href="#">Create account</a>
+                <router-link class="underlineHover" to="/create-user">Create account</router-link>
             </div>
 
         </div>

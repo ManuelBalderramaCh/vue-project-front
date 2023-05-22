@@ -11,16 +11,18 @@
                         <l-table class="table-hover table-striped" :columns="table1.columns" :data="table1.data">
                             <template slot-scope="{row}">
                                 <td>{{ row.id }}</td>
-                                <td>{{ row.name }}</td>
+                                <td>{{ row.firstName }}</td>
+                                <td>{{ row.lastName }}</td>
                                 <td>{{ row.email }}</td>
-                                <td>{{ row.project }}</td>
                                 <td>{{ row.team }}</td>
+                                <td>{{ row.project }}</td>
+                                <td>{{ row.ability }}</td>
+                                <td>{{ row.curp }}</td>
+                                <td>{{ row.rfc }}</td>
                                 <td>{{ row.role }}</td>
                                 <td>
-                                    <v-button type="button" class="btn-simple btn btn-xs btn-info"
-                                        v-tooltip.top-center="editTooltip">
-                                        <i class="fa fa-edit"></i>
-                                    </v-button>
+                                    <router-link to="/admin/user" tag="button"
+                                        class="btn btn-light btn-sm">Editar</router-link>
                                 </td>
                             </template>
                         </l-table>
@@ -37,15 +39,18 @@
 import LTable from 'src/components/Table.vue'
 import Card from 'src/components/Cards/Card.vue'
 
-const tableColumns = ['Id', 'Name', 'Email', 'Project', 'Team', 'Role', 'Edit']
+const tableColumns = ['Id', 'First Name', 'Last Name', 'Email', 'Team', 'Project', 'Ability', 'Curp,', 'RFC', 'Role', 'Edit']
 const tableData = [{
-    id: 1,
-    name: 'Miguel Cortinas',
-    email: 'mike@uach.mx',
-    project: 'Niger',
-    team: 'Ratongas',
-    role: 'Developer',
-    edit: '' //Boton,
+    id: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    team: '',
+    project: '',
+    ability: '',
+    curp: '',
+    rfc: '',
+    role: '',
 }]
 export default {
     components: {

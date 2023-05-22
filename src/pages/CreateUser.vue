@@ -1,45 +1,83 @@
 <template>
-    <div class="content">
+    <div class="content" style="margin-top:3%;margin-left: 15%; margin-right: 15%;">
+        <br>
         <div class="container-fluid">
 
             <card>
-                <h4 slot="header" class="card-title">New User</h4>
+                <h4 slot="header" class="card-title">Create New member</h4>
+
                 <form>
                     <div class="row">
-                        <div class="col-md-5">
-                            <base-input type="text" label="Project Name" :disabled="false" placeholder="Project Name"
-                                v-model="user.name">
-                            </base-input>
-                        </div>
-                        <div class="col-md-3">
-                            <base-input type="text" label="Project Manager" placeholder="Project Manager"
-                                v-model="user.projectManager">
-                            </base-input>
-                        </div>
                         <div class="col-md-4">
-                            <base-input type="email" label="Product Owner" placeholder="Product Owner"
-                                v-model="user.productOwner">
+                            <base-input type="text" label="Email" placeholder="example@email.com" v-model="member.email">
                             </base-input>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-4">
-                            <base-input type="text" label="Application Date" placeholder="dd/mm/yyyy"
-                                v-model="user.applicationDate">
+                            <base-input type="password" label="Password" placeholder="Your password here"
+                                v-model="member.password">
+                            </base-input>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <base-input type="text" label="First Name" placeholder="First Name" v-model="member.firstName">
                             </base-input>
                         </div>
                         <div class="col-md-4">
-                            <base-input type="text" label="Start Up Date" placeholder="dd/mm/yyyy"
-                                v-model="user.startUpDate">
+                            <base-input type="text" label="Last Name" placeholder="Last Name" v-model="member.lastName">
                             </base-input>
                         </div>
-                        <div class="col-md-4">
-                            <base-input type="text" label="Developers List" placeholder="Select a Developer"
-                                v-model="user.developer">
-                                <select class="form-control" placeholder="Select a Developer">
+                        <div class="col-md-3">
+                            <base-input type="text" label="Birth Day" placeholder="DD/MM/YYYY" v-model="member.birthDate">
+                            </base-input>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <base-input type="text" label="Role's List" placeholder="Select a role" v-model="member.role">
+                                <select class="form-control" placeholder="Project's List">
                                     <option>Select a role</option>
-                                    <option>Product owner</option>
+                                    <option>Product Owner</option>
+                                    <option>Project Manager</option>
+                                    <option>Developer</option>
+                                </select>
+                            </base-input>
+                        </div>
+
+                        <div class="col-md-3">
+                            <base-input type="text" label="Team" placeholder="Select a Team" v-model="member.team">
+                                <select class="form-control" placeholder="Team">
+                                    <option>Select a team</option>
+                                    <option>Team 1</option>
+                                    <option>Team 2</option>
+                                    <option>Team 3</option>
+                                </select>
+                            </base-input>
+                        </div>
+
+                        <div class="col-md-3">
+                            <base-input type="text" label="Project's List" placeholder="Select a Project"
+                                v-model="member.project">
+                                <select class="form-control" placeholder="Team">
+                                    <option>Select a project</option>
+                                    <option>P 1</option>
+                                    <option>P 2</option>
+                                    <option>P 3</option>
+                                </select>
+                            </base-input>
+                        </div>
+
+                        <div class="col-md-3">
+                            <base-input type="text" label="Ability" placeholder="Select an ability"
+                                v-model="member.ability">
+                                <select class="form-control" placeholder="Team">
+                                    <option>Select a ability</option>
+                                    <option>Product Owner</option>
                                     <option>Project Manager</option>
                                     <option>Developer</option>
                                 </select>
@@ -48,27 +86,50 @@
                     </div>
 
                     <div class="row">
+                        <div class="col-md-3">
+                            <base-input type="text" label="CURP" placeholder="CURP" v-model="member.curp">
+                            </base-input>
+                        </div>
+                        <div class="col-md-3">
+                            <base-input type="text" label="RFC" placeholder="RFC" v-model="member.rfc">
+                            </base-input>
+                        </div>
+                    </div>
+
+                    <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Description</label>
-                                <textarea rows="5" class="form-control border-input"
-                                    placeholder="Here can be your description" v-model="user.description">
-                                                                                                                                                                    </textarea>
-                            </div>
+                            <base-input type="text" label="Address" placeholder="Home Address" v-model="member.address">
+                            </base-input>
                         </div>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-success btn-fill float-right" @click.prevent="updateProfile">
-                            Create Project
+                            Create User
                         </button>
                     </div>
                     <div class="clearfix"></div>
-
                 </form>
             </card>
 
 
         </div>
+        <footer class="footer" style="margin-top: 5%;">
+            <div class="container-fluid">
+                <nav>
+                    <ul class="footer-menu">
+                        <li>
+                            <router-link :to="{ path: '/admin' }">Project Handler Dashboard</router-link>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="copyright text-center">
+                    &copy; Coded with
+                    <i class="fa fa-heart heart"></i> by
+                    <a href="https://binarcode.com" target="_blank">Team 3</a>.
+                    Designed by IS.
+                </div>
+            </div>
+        </footer>
     </div>
 </template>
 <script>
@@ -80,23 +141,28 @@ export default {
     },
     data() {
         return {
-            user: {
-                name: '',
-                applicationDate: '',
-                startUpDate: '',
-                projectManager: '',
-                productOwner: '',
-                developer: '',
-                description: ``
+            member: {
+                firstName: '',
+                lastName: '',
+                email: '',
+                password: '',
+                birthDate: '',
+                role: '',
+                team: '',
+                project: '',
+                ability: '',
+                curp: '',
+                rfc: '',
+                address: '',
             }
         }
     },
     methods: {
         updateProfile() {
-            alert('Your data: ' + JSON.stringify(this.user))
+            alert('Your data: ' + JSON.stringify(this.member))
         }
     }
 }
 
 </script>
-<style></style>
+<style scoped></style>

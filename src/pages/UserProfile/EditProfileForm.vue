@@ -1,14 +1,15 @@
 <template>
   <card>
     <h4 slot="header" class="card-title">Edit Profile</h4>
+
     <form>
       <div class="row">
         <div class="col-md-5">
-          <base-input type="text" label="Company" :disabled="true" placeholder="Light dashboard" v-model="user.company">
+          <base-input type="text" label="Project" :disabled="true" placeholder="Light dashboard" v-model="user.project">
           </base-input>
         </div>
         <div class="col-md-3">
-          <base-input type="text" label="Username" placeholder="Username" v-model="user.username">
+          <base-input type="text" label="Team" placeholder="Team" v-model="user.username">
           </base-input>
         </div>
         <div class="col-md-4">
@@ -18,12 +19,35 @@
       </div>
 
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-3">
           <base-input type="text" label="First Name" placeholder="First Name" v-model="user.firstName">
           </base-input>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
           <base-input type="text" label="Last Name" placeholder="Last Name" v-model="user.lastName">
+          </base-input>
+        </div>
+        <div class="col-md-3">
+          <base-input type="text" label="Birth Day" placeholder="Birth Day" v-model="user.lastName">
+          </base-input>
+        </div>
+        <div class="col-md-3">
+          <base-input type="text" label="Role" placeholder="Role" v-model="user.lastName">
+          </base-input>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-5">
+          <base-input type="text" label="Ability" placeholder="Ability" v-model="user.city">
+          </base-input>
+        </div>
+        <div class="col-md-3">
+          <base-input type="text" label="CURP" placeholder="CURP" v-model="user.address">
+          </base-input>
+        </div>
+        <div class="col-md-3">
+          <base-input type="text" label="RFC" placeholder="RFC" v-model="user.address">
           </base-input>
         </div>
       </div>
@@ -32,32 +56,6 @@
         <div class="col-md-12">
           <base-input type="text" label="Address" placeholder="Home Address" v-model="user.address">
           </base-input>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-4">
-          <base-input type="text" label="City" placeholder="City" v-model="user.city">
-          </base-input>
-        </div>
-        <div class="col-md-4">
-          <base-input type="text" label="Country" placeholder="Country" v-model="user.country">
-          </base-input>
-        </div>
-        <div class="col-md-4">
-          <base-input type="number" label="Postal Code" placeholder="ZIP Code" v-model="user.postalCode">
-          </base-input>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="form-group">
-            <label>About Me</label>
-            <textarea rows="5" class="form-control border-input" placeholder="Here can be your description"
-              v-model="user.aboutMe">
-                        </textarea>
-          </div>
         </div>
       </div>
       <div class="text-center">
@@ -79,7 +77,7 @@ export default {
   data() {
     return {
       user: {
-        company: 'Light dashboard',
+        project: 'Niger',
         username: 'mike@uach.mx',
         email: '',
         firstName: 'Miguel',

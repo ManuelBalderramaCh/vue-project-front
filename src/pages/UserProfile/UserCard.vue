@@ -10,16 +10,13 @@
           <small>mike@uach.mx</small>
         </h4>
       </a>
+      <div slot="footer" class="text-center d-flex justify-content-center">
+        <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
+        <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
+        <button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
+      </div>
     </div>
-    <p class="description text-center"> "En el gabacho <br>
-      Se reparte la ch y la pizza <br>
-      Puro belicon"
-    </p>
-    <div slot="footer" class="text-center d-flex justify-content-center">
-      <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
-      <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
-      <button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
-    </div>
+
   </card>
 </template>
 <script>
