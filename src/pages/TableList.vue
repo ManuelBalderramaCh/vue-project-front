@@ -23,8 +23,8 @@
                 <tbody>
                   <tr v-for="project in projects" :key="project._id">
                     <td>{{ project._projectName }}</td>
-                    <td>{{ project._projectManagerId }}</td>
-                    <td>{{ project._projectOwnerId }}</td>
+                    <td>{{ project._projectManager }}</td>
+                    <td>{{ project._projectOwner }}</td>
                     <td>{{ project._applicationDate }}</td>
                     <td>{{ project._startUpDate }}</td>
                     <td><router-link to="/admin/overview" tag="button"
