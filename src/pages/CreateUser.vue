@@ -6,7 +6,7 @@
             <card>
                 <h4 slot="header" class="card-title">Create New member</h4>
 
-                <form>
+                <form v-on:submit.prevent="created">
                     <div class="row">
                         <div class="col-md-4">
                             <base-input type="text" label="Email" placeholder="example@email.com" v-model="member.email">
@@ -24,7 +24,7 @@
 
                     <div class="row">
                         <div class="col-md-4">
-                            <base-input type="text" label="First Name" placeholder="First Name" v-model="member.firstName">
+                            <base-input type="text" label="First Name" placeholder="First Name" v-model="member.name">
                             </base-input>
                         </div>
                         <div class="col-md-4">
@@ -32,15 +32,15 @@
                             </base-input>
                         </div>
                         <div class="col-md-3">
-                            <base-input type="text" label="Birth Day" placeholder="DD/MM/YYYY" v-model="member.birthDate">
+                            <base-input type="text" label="Birth Day" placeholder="DD/MM/YYYY" v-model="member.birthDay">
                             </base-input>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-3">
-                            <base-input type="text" label="Role's List" placeholder="Select a role" v-model="member.role">
-                                <select class="form-control" placeholder="Project's List">
+                            <base-input type="text" label="Role's List" placeholder="Select a role">
+                                <select class="form-control" placeholder="Project's List" v-model="member.role">
                                     <option>Select a role</option>
                                     <option>Product Owner</option>
                                     <option>Project Manager</option>
@@ -50,19 +50,17 @@
                         </div>
 
                         <div class="col-md-3">
-                            <base-input type="text" label="Project's List" placeholder="Select a Project"
-                                v-model="member.project">
-                                <select class="form-control" placeholder="Team">
-                                    <option disabled value="">Select a project</option>
-                                    <option v-for="project in projects" :value="project">{{ project._projectName }}</option>
+                            <base-input type="text" label="Project's List" placeholder="Select a Project">
+                                <select class="form-control" placeholder="Team" v-model="member.project">
+                                    <option>Select a project</option>
+                                    <option v-for="project in projects" :value="project._projectName">{{ project._projectName }}</option>
                                 </select>
                             </base-input>
                         </div>
 
                         <div class="col-md-3">
-                            <base-input type="text" label="Ability" placeholder="Select an ability"
-                                v-model="member.ability">
-                                <select class="form-control" placeholder="Team">
+                            <base-input type="text" label="Ability" placeholder="Select an ability">
+                                <select class="form-control" placeholder="Team" v-model="member.abilities">
                                     <option>Select a ability</option>
                                     <option>Senior</option>
                                     <option>Master</option>
@@ -90,7 +88,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-success btn-fill float-right" @click.prevent="updateProfile">
+                        <button type="submit" class="btn btn-success btn-fill float-right" @click.prevent="created">
                             Create User
                         </button>
                     </div>
@@ -130,15 +128,14 @@ export default {
     data() {
         return {
             member: {
-                firstName: '',
+                name: '',
                 lastName: '',
                 email: '',
                 password: '',
-                birthDate: '',
+                birthDay: '',
                 role: '',
-                team: '',
                 project: '',
-                ability: '',
+                abilities: '',
                 curp: '',
                 rfc: '',
                 address: '',
@@ -153,6 +150,27 @@ export default {
         listProjects(){
             axios.get('http://localhost:3000/projects')
             .then(res => this.projects = res.data.obj);
+        },
+        created(){
+            axios.post('http://localhost:3000/members',{
+                name: this.member.name,
+                lastName: this.member.lastName,
+                email: this.member.email,
+                password: this.member.password,
+                birthDay: this.member.birthDate,
+                role: this.member.role,
+                project: this.member.project,
+                abilities: this.member.abilities,
+                curp: this.member.curp,
+                rfc: this.member.rfc,
+                address: this.member.address,
+            }).then(res => {
+                console.log(res);
+                this.$router.push('/login');
+            }).catch(err => {
+                this.msg = err.response.data.message;
+                console.log(err);
+            });
         }
     },
     mounted(){

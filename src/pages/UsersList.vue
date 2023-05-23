@@ -15,7 +15,6 @@
                                     <th scope="col">First Name</th>
                                     <th scope="col">Last Name</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Team</th>
                                     <th scope="col">Project</th>
                                     <th scope="col">Ability</th>
                                     <th scope="col">CURP</th>
@@ -29,7 +28,6 @@
                                 <td>{{ member._name }}</td>
                                 <td>{{ member._lastName }}</td>
                                 <td>{{ member._email }}</td>
-                                <td>{{ member._team }}</td>
                                 <td>{{ member._project }}</td>
                                 <td>{{ member._abilities }}</td>
                                 <td>{{ member._curp }}</td>
