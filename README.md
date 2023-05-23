@@ -1,52 +1,25 @@
-# [Vue Light Bootstrap Dashboard](http://vuejs.creative-tim.com/vue-light-bootstrap-dashboard) [![version][version-badge]][changelog] [![license][license-badge]][license]
+# Manejador de Proyectos
 
-> Admin dashboard based on light bootstrap dashboard UI template + vue-router
+## Introducción
 
-This project is a vue version of [Light bootstrap dashboard](https://www.creative-tim.com/product/light-bootstrap-dashboard)
-designed for vue js. The dashboard includes Bootstrap 4, vue-router, chartist, google-maps and several other plugins/components.
+Esta herramienta está diseñada para simplificar la gestión de proyectos, brindando un enfoque estructurado y organizado para planificar, ejecutar y supervisar los proyectos con éxito. Ya sea trabajos en proyectos personales, profesionales o en equipo, el manejador de proyectos ayudará a mantener el control, optimizar recursos y alcanzar tus objetivos de manera eficiente.
 
-Check the [Live Demo here](http://vuejs.creative-tim.com/vue-light-bootstrap-dashboard).
+## ¿Qué es un manejador de proyectos?
 
-![](public/Dashboard.PNG)
+Un manejador de proyectos, también conocido como software de gestión de proyectos, es una aplicación diseñada para ayudar a planificar, organizar y supervisar proyectos desde su inicio hasta su finalización.
 
-## :rocket: Getting started
+Características principales del Manejador de Proyectos:
 
-Vue Light Bootstrap Dashboard is built on top of Bootstrap 4, Vuejs and Vue-router. To get started do the following steps:
+1. **Creación y asignación de tareas:** Permite crear una lista de tareas necesarias para completar el proyecto y asignarlas a los miembros del equipo correspondientes.
 
-1. Download the project
-2. Make sure you have node.js (https://nodejs.org/en/) installed
-3. Type `npm install` in the source folder where `package.json` is located
-4. Type `npm run dev` to start the development server
+2. **Establecimiento de plazos y hitos:** Permite establecer fechas límite para las tareas individuales y para el proyecto en su conjunto.
 
-The repo uses [vue-cli](https://github.com/vuejs/vue-cli) scaffolding which takes care of the development setup with webpack and all the necessary modern tools to make web development faster and easier.
+3. **Seguimiento del progreso:** Proporciona una visión general del estado actual del proyecto y permite realizar un seguimiento del progreso de las tareas individuales.
 
-## [Documentation](https://demos.creative-tim.com/vue-light-bootstrap-dashboard/documentation/#/buttons)
+4. **Gestión de recursos:** Permite administrar los recursos necesarios para el proyecto, como personal, materiales, presupuesto, etc.
 
-## :cloud: Build Setup
+5. **Comunicación y colaboración:** Facilita la comunicación entre los miembros del equipo al proporcionar herramientas para compartir actualizaciones.
 
-### install dependencies
 
-`npm install`
-
-### serve with hot reload at localhost:8000
-
-`npm run dev`
-
-### build for production with minification
-
-`npm run build`
-
-### run unit tests
-
-`npm run unit`
-
-### run and watch unit tests
-
-`npm run unit:watch`
-
-## :clipboard: Contribution guide
-
-- `npm install` or `yarn install`
-- Please don't use jQuery or jQuery based plugins since there are many pure Vue alternatives
-
+El Manejador de Proyectos fue desarrollado teniendo en cuenta estas características para ofrecer una experiencia de gestión de proyectos integral y eficiente.
 
