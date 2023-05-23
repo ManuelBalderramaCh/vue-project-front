@@ -5,7 +5,7 @@
 
             <!-- Icon -->
             <div class="fadeIn first">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" id="icon"
+                <img src="https://cdn-icons-png.flaticon.com/512/6681/6681204.png" id="icon"
                     alt="User Icon" />
             </div>
 
