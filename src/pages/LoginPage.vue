@@ -57,7 +57,7 @@ export default {
                 password: this.password
             }).then(res => {
                 console.log(res);
-                this.$router.push('/overview');
+                this.$router.push('/admin/overview');
             }).catch(err => {
                 this.msg = err.response.data.message;
                 console.log(err);

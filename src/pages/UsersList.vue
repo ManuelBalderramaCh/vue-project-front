@@ -8,24 +8,38 @@
                             <h4 class="card-title">Active users</h4>
                             <p class="card-category">Here is a list of users in projects</p>
                         </template>
-                        <l-table class="table-hover table-striped" :columns="table1.columns" :data="table1.data">
-                            <template slot-scope="{row}">
-                                <td>{{ row.id }}</td>
-                                <td>{{ row.firstName }}</td>
-                                <td>{{ row.lastName }}</td>
-                                <td>{{ row.email }}</td>
-                                <td>{{ row.team }}</td>
-                                <td>{{ row.project }}</td>
-                                <td>{{ row.ability }}</td>
-                                <td>{{ row.curp }}</td>
-                                <td>{{ row.rfc }}</td>
-                                <td>{{ row.role }}</td>
-                                <td>
-                                    <router-link to="/admin/user" tag="button"
-                                        class="btn btn-light btn-sm">Editar</router-link>
-                                </td>
-                            </template>
-                        </l-table>
+                        
+                        <table class="table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Team</th>
+                                    <th scope="col">Project</th>
+                                    <th scope="col">Ability</th>
+                                    <th scope="col">CURP</th>
+                                    <th scope="col">RFC</th>
+                                    <th scope="col">ROLE</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="member in members" :key="member._id">
+                                <td>{{ member._name }}</td>
+                                <td>{{ member._lastName }}</td>
+                                <td>{{ member._email }}</td>
+                                <td>{{ member._team }}</td>
+                                <td>{{ member._project }}</td>
+                                <td>{{ member._abilities }}</td>
+                                <td>{{ member._curp }}</td>
+                                <td>{{ member._rfc }}</td>
+                                <td>{{ member._role }}</td>
+                                <td><router-link to="/admin/user" tag="button"
+                                        class="btn btn-light btn-sm">Editar</router-link></td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </card>
 
                 </div>
@@ -36,40 +50,30 @@
 </template>
 <script>
 
-import LTable from 'src/components/Table.vue'
-import Card from 'src/components/Cards/Card.vue'
 
-const tableColumns = ['Id', 'First Name', 'Last Name', 'Email', 'Team', 'Project', 'Ability', 'Curp,', 'RFC', 'Role', 'Edit']
-const tableData = [{
-    id: '',
-    firstName: '',
-    lastName: '',
-    email: '',
-    team: '',
-    project: '',
-    ability: '',
-    curp: '',
-    rfc: '',
-    role: '',
-}]
+import Card from 'src/components/Cards/Card.vue'
+import axios from 'axios';
+
 export default {
     components: {
-        LTable,
+    
         Card
     },
     data() {
         return {
-            table1: {
-                columns: [...tableColumns],
-                data: [...tableData]
-            },
-            table2: {
-                columns: [...tableColumns],
-                data: [...tableData]
-            }
+            members: null
         }
+    },
+    methods: {
+        list(){
+            axios.get('http://localhost:3000/members')
+            .then(res => this.members = res.data.obj);
+        }
+    },
+    mounted(){
+        this.list();
     }
-}
+};
 </script>
-<style></style>
+<style scoped></style>
   
