@@ -9,7 +9,7 @@
               <p class="card-category">Here is a list of active projects</p>
             </template>
 
-              <table class="table-hover table-striped">
+              <table class="table-hover table-striped" style="padding: 15%; width: 100%; margin-left: 1%;">
                 <thead>
                   <tr>
                     <th scoped="col"> Project Name</th>

@@ -9,7 +9,7 @@
                             <p class="card-category">Here is a list of users in projects</p>
                         </template>
                         
-                        <table class="table-hover">
+                        <table class="table-hover" style="padding: 15%; width: 100%; margin-left: 1%;">
                             <thead>
                                 <tr>
                                     <th scope="col">First Name</th>
