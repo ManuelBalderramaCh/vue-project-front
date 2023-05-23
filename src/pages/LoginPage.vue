@@ -5,8 +5,9 @@
 
             <!-- Icon -->
             <div class="fadeIn first">
-                <img src="https://cdn-icons-png.flaticon.com/512/6681/6681204.png" id="icon"
-                    alt="User Icon" />
+                <img src="https://cdn-icons-png.flaticon.com/512/6681/6681204.png" id="icon" 
+                    alt="User Icon" style="width: 150px; height: 150px; margin-top: 5%; margin-bottom: 5%;" />
+                    
             </div>
 
             <!-- Login Form -->
