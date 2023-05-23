@@ -114,12 +114,12 @@ export default {
         created(){
             axios.post('http://localhost:3000/projects',{
                 projectName: this.project.projectName,
-                applicationDate: this.applicationDate,
-                startUpDate: this.startUpDate,
-                projectManager: this.projectManager,
-                projectOwner: this.projectOwner,
-                developer: this.developer,
-                description: this.description
+                applicationDate: this.project.applicationDate,
+                startUpDate: this.project.startUpDate,
+                projectManager: this.project.projectManager,
+                projectOwner: this.project.projectOwner,
+                developer: this.project.developer,
+                description: this.project.description
             }).then(res =>{
                 console.log(res);
                 this.$router.push('/admin/overview')
