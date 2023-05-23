@@ -17,15 +17,18 @@
                     <th scoped="col"> Product Owner</th>
                     <th scoped="col"> Application Date</th>
                     <th scoped="col"> Start Up Date</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr v-for="project in projects" :key="project._id">
                     <td>{{ project._projectName }}</td>
-                    <td>{{  }}</td>
-                    <td>{{  }}</td>
+                    <td>{{ project._projectManagerId }}</td>
+                    <td>{{ project._projectOwnerId }}</td>
                     <td>{{ project._applicationDate }}</td>
-                    <td>{{ project.startUpDate }}</td>
+                    <td>{{ project._startUpDate }}</td>
+                    <td><router-link to="/admin/overview" tag="button"
+                                        class="btn btn-light btn-sm">Ir</router-link></td>
                   </tr>
                 </tbody>
               </table>
@@ -51,7 +54,7 @@ export default {
   },
   methods: {
     list(){
-      axios.get('http://localhost:3000/directors')
+      axios.get('http://localhost:3000/projects')
       .then(res => this.projects = res.data.obj);
     }
   },
