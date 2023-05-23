@@ -50,24 +50,11 @@
                         </div>
 
                         <div class="col-md-3">
-                            <base-input type="text" label="Team" placeholder="Select a Team" v-model="member.team">
-                                <select class="form-control" placeholder="Team">
-                                    <option>Select a team</option>
-                                    <option>Team 1</option>
-                                    <option>Team 2</option>
-                                    <option>Team 3</option>
-                                </select>
-                            </base-input>
-                        </div>
-
-                        <div class="col-md-3">
                             <base-input type="text" label="Project's List" placeholder="Select a Project"
                                 v-model="member.project">
                                 <select class="form-control" placeholder="Team">
-                                    <option>Select a project</option>
-                                    <option>P 1</option>
-                                    <option>P 2</option>
-                                    <option>P 3</option>
+                                    <option disabled value="">Select a project</option>
+                                    <option v-for="project in projects" :value="project">{{ project._projectName }}</option>
                                 </select>
                             </base-input>
                         </div>
@@ -77,9 +64,9 @@
                                 v-model="member.ability">
                                 <select class="form-control" placeholder="Team">
                                     <option>Select a ability</option>
-                                    <option>Product Owner</option>
-                                    <option>Project Manager</option>
-                                    <option>Developer</option>
+                                    <option>Senior</option>
+                                    <option>Master</option>
+                                    <option>Junior</option>
                                 </select>
                             </base-input>
                         </div>
@@ -133,7 +120,8 @@
     </div>
 </template>
 <script>
-import Card from 'src/components/Cards/Card.vue'
+import Card from 'src/components/Cards/Card.vue';
+import axios from 'axios';
 
 export default {
     components: {
@@ -154,13 +142,21 @@ export default {
                 curp: '',
                 rfc: '',
                 address: '',
-            }
+            },
+            projects: null
         }
     },
     methods: {
         updateProfile() {
             alert('Your data: ' + JSON.stringify(this.member))
+        },
+        listProjects(){
+            axios.get('http://localhost:3000/projects')
+            .then(res => this.projects = res.data.obj);
         }
+    },
+    mounted(){
+        this.listProjects();
     }
 }
 
