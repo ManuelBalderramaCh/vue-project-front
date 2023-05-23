@@ -12,13 +12,25 @@
                             </base-input>
                         </div>
                         <div class="col-md-3">
-                            <base-input type="text" label="Project Manager" placeholder="Project Manager"
-                                v-model="project.projectManager">
+                            <base-input type="text" label="Project Manager" placeholder="Select a PM"
+                                v-model="project.developer">
+                                <select class="form-control" placeholder="Select a PM">
+                                    <option>Select a PM</option>
+                                    <option>Manuel</option>
+                                    <option>Eduardo</option>
+                                    <option>Edgar</option>
+                                </select>
                             </base-input>
                         </div>
                         <div class="col-md-4">
-                            <base-input type="email" label="Product Owner" placeholder="Product Owner"
-                                v-model="project.productOwner">
+                            <base-input type="text" label="Product Owner" placeholder="Select a PO"
+                                v-model="project.developer">
+                                <select class="form-control" placeholder="Select a PO">
+                                    <option>Select a PO</option>
+                                    <option>Manuel</option>
+                                    <option>Eduardo</option>
+                                    <option>Edgar</option>
+                                </select>
                             </base-input>
                         </div>
                     </div>

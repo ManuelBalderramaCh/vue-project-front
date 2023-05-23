@@ -8,23 +8,27 @@
               <h4 class="card-title">Projects</h4>
               <p class="card-category">Here is a list of active projects</p>
             </template>
-            <l-table class="table-hover table-striped" :columns="table1.columns" :data="table1.data">
-              <template slot-scope="{row}">
-                <td>{{ row.id }}</td>
-                <td>{{ row.name }}</td>
-                <td>{{ row.manager }}</td>
-                <td>{{ row.owner }}</td>
-                <td>{{ row.application }}</td>
-                <td>{{ row.startup }}</td>
-                <td>
-                  <!-- <v-button type="button" class="btn-simple btn btn-xs btn-info" v-tooltip.top-center="editTooltip"
-                    to="admin/project">
-                    <i class="fa fa-edit"></i>
-                  </v-button> -->
-                  <router-link to="/admin/project" tag="button" class="btn btn-light btn-sm">Editar</router-link>
-                </td>
-              </template>
-            </l-table>
+
+              <table class="table-hover table-striped">
+                <thead>
+                  <tr>
+                    <th scoped="col"> Project Name</th>
+                    <th scoped="col"> Project Manager</th>
+                    <th scoped="col"> Product Owner</th>
+                    <th scoped="col"> Application Date</th>
+                    <th scoped="col"> Start Up Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="project in projects" :key="project._id">
+                    <td>{{ project._projectName }}</td>
+                    <td>{{  }}</td>
+                    <td>{{  }}</td>
+                    <td>{{ project._applicationDate }}</td>
+                    <td>{{ project.startUpDate }}</td>
+                  </tr>
+                </tbody>
+              </table>
           </card>
         </div>
       </div>
@@ -33,35 +37,27 @@
 </template>
 <script>
 
-import LTable from 'src/components/Table.vue'
 import Card from 'src/components/Cards/Card.vue'
+import axios from 'axios';
 
-const tableColumns = ['Id', 'Name', 'Manager', 'Owner', 'Application', 'StartUp', '']
-const tableData = [{
-  id: 1,
-  name: 'Niger',
-  manager: 'Miguel Cortinas',
-  owner: 'Manuel Balderrama',
-  application: '20/05/2023',
-  startup: '20/05/2023'
-}]
 export default {
   components: {
-    LTable,
     Card
   },
   data() {
     return {
-      table1: {
-        columns: [...tableColumns],
-        data: [...tableData]
-      },
-      table2: {
-        columns: [...tableColumns],
-        data: [...tableData]
-      }
+      projects: null,
+    };
+  },
+  methods: {
+    list(){
+      axios.get('http://localhost:3000/directors')
+      .then(res => this.projects = res.data.obj);
     }
+  },
+  mounted(){
+    this.list();
   }
 }
 </script>
-<style></style>
+<style scoped></style>
