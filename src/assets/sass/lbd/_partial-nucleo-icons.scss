@@ -1,9 +1,3 @@
-/*--------------------------------
-
-nucleo-icons Web Font - built using nucleoapp.com
-License - nucleoapp.com/license/
-
--------------------------------- */
 @font-face {
   font-family: 'nucleo-icons';
   src: url('~@/assets/fonts/nucleo-icons.eot');
@@ -14,22 +8,17 @@ License - nucleoapp.com/license/
   font-weight: normal;
   font-style: normal;
 }
-/*------------------------
-	base class definition
--------------------------*/
+
 .nc-icon {
   display: inline-block;
   font: normal normal normal 14px/1 'nucleo-icons';
   font-size: inherit;
   speak: none;
   text-transform: none;
-  /* Better Font Rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/*------------------------
-  change icon size
--------------------------*/
+
 .nc-icon.lg {
   font-size: 1.33333333em;
   vertical-align: -16%;
@@ -40,9 +29,7 @@ License - nucleoapp.com/license/
 .nc-icon.x3 {
   font-size: 3em;
 }
-/*----------------------------------
-  add a square/circle background
------------------------------------*/
+
 .nc-icon.square,
 .nc-icon.circle {
   padding: 0.33333333em;
@@ -52,9 +39,7 @@ License - nucleoapp.com/license/
 .nc-icon.circle {
   border-radius: 50%;
 }
-/*------------------------
-  list icons
--------------------------*/
+
 .nc-icon-ul {
   padding-left: 0;
   margin-left: 2.14285714em;
@@ -86,9 +71,7 @@ License - nucleoapp.com/license/
         }
     }
 }
-/*------------------------
-  spinning icons
--------------------------*/
+
 .nc-icon.spin {
   -webkit-animation: nc-icon-spin 2s infinite linear;
   -moz-animation: nc-icon-spin 2s infinite linear;
@@ -126,9 +109,7 @@ License - nucleoapp.com/license/
     transform: rotate(360deg);
   }
 }
-/*------------------------
-  rotated/flipped icons
--------------------------*/
+
 .nc-icon.rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
@@ -169,9 +150,7 @@ License - nucleoapp.com/license/
   -o-transform: scale(1, -1);
   transform: scale(1, -1);
 }
-/*------------------------
-	font icons
--------------------------*/
+
 
 .nc-air-baloon::before {
     content: "\ea01";
@@ -574,4 +553,3 @@ License - nucleoapp.com/license/
 }
 
 
-/* all icon font classes list here */

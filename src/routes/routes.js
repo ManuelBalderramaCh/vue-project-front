@@ -1,8 +1,6 @@
 import DashboardLayout from '../layout/DashboardLayout.vue'
-// GeneralViews
 import NotFound from '../pages/NotFoundPage.vue'
 
-// Admin pages
 import Overview from 'src/pages/Overview.vue'
 import ProjectManagement from 'src/pages/ProjectManagement.vue'
 import TableList from 'src/pages/TableList.vue'

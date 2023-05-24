@@ -22,7 +22,7 @@
     props: {
       chartType: {
         type: String,
-        default: 'Line' // Line | Pie | Bar
+        default: 'Line' 
       },
       chartOptions: {
         type: Object,
@@ -49,9 +49,7 @@
       }
     },
     methods: {
-      /***
-       * Initializes the chart by merging the chart options sent via props and the default chart options
-       */
+      
       initChart () {
         var chartIdQuery = `#${this.chartId}`
         this.chart = this.$Chartist[this.chartType](chartIdQuery, this.chartData, this.chartOptions, this.responsiveOptions)
@@ -63,9 +61,7 @@
           this.animateBarChart()
         }
       },
-      /***
-       * Assigns a random id to the chart
-       */
+      
       updateChartId () {
         const currentTime = new Date().getTime().toString()
         const randomInt = this.getRandomInt(0, currentTime)

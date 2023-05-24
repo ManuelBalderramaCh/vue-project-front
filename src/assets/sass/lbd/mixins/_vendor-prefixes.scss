@@ -1,19 +1,15 @@
-// User select
-// For selecting text on the page
-
 @mixin user-select($select) {
   -webkit-user-select: $select;
      -moz-user-select: $select;
-      -ms-user-select: $select; // IE10+
+      -ms-user-select: $select; 
           user-select: $select;
 }
 
 @mixin box-shadow($shadow...) {
-  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+  -webkit-box-shadow: $shadow; 
           box-shadow: $shadow;
 }
 
-// Box sizing
 @mixin box-sizing($boxmodel) {
   -webkit-box-sizing: $boxmodel;
      -moz-box-sizing: $boxmodel;
@@ -90,12 +86,12 @@
 
 @mixin radial-gradient($extern-color, $center-color){
     background: $extern-color;
-    background: -moz-radial-gradient(center, ellipse cover, $center-color 0%, $extern-color 100%); /* FF3.6+ */
+    background: -moz-radial-gradient(center, ellipse cover, $center-color 0%, $extern-color 100%); 
     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,$center-color), color-stop(100%,$extern-color)); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover, $center-color 0%,$extern-color 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover, $center-color 0%,$extern-color 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover, $center-color 0%,$extern-color 100%); /* IE10+ */
-    background: radial-gradient(ellipse at center, $center-color 0%,$extern-color 100%); /* W3C */
+    background: -webkit-radial-gradient(center, ellipse cover, $center-color 0%,$extern-color 100%); 
+    background: -o-radial-gradient(center, ellipse cover, $center-color 0%,$extern-color 100%); 
+    background: -ms-radial-gradient(center, ellipse cover, $center-color 0%,$extern-color 100%); 
+    background: radial-gradient(ellipse at center, $center-color 0%,$extern-color 100%); 
     background-size: 550% 450%;
 }
 

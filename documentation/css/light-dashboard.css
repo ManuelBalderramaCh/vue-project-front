@@ -1,19 +1,4 @@
-/*!
 
-  =========================================================
-  * Paper Dashboard PRO - V1.2.1
-  =========================================================
-
-  * Product Page: https://www.creative-tim.com/product/paper-dashboard-pro
-  * Available with purchase of license from https://www.creative-tim.com/product/paper-dashboard-pro
-  * Copyright 2017 Creative Tim (https://www.creative-tim.com)
-  * License Creative Tim (https://www.creative-tim.com/license)
-
-  =========================================================
-
-*/
-/*      light colors - used for select dropdown         */
-/*           Social buttons            */
 .ct-blue {
   stroke: #7A9E9F !important;
 }
@@ -34,12 +19,6 @@
   stroke: #EB5E28 !important;
 }
 
-/*!
-Animate.css - http://daneden.me/animate
-Licensed under the MIT license - http://opensource.org/licenses/MIT
-
-Copyright (c) 2015 Daniel Eden
-*/
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -1179,11 +1158,7 @@ body.swal2-iosfix {
     transform: rotate(360deg);
   }
 }
-/**
- * @author zhixin wen <wenzhixin2010@gmail.com>
- * version: 1.8.1
- * https://github.com/wenzhixin/bootstrap-table/
- */
+
 .bootstrap-table .table {
   margin-bottom: 0 !important;
   border-bottom: 1px solid #cfcfca;
@@ -1288,7 +1263,6 @@ body.swal2-iosfix {
   border-left: none;
 }
 
-/* the same color with .active */
 .fixed-table-container tbody .selected td {
   background-color: rgba(245, 245, 245, 0.34);
 }
@@ -1438,7 +1412,6 @@ body.swal2-iosfix {
   text-align: left !important;
 }
 
-/* support bootstrap 2 */
 .fixed-table-body thead th .th-inner {
   box-sizing: border-box;
 }
@@ -1471,7 +1444,6 @@ body.swal2-iosfix {
   border-bottom-right-radius: 4px;
 }
 
-/* support bootstrap 3 */
 .bootstrap-table .table thead > tr > th {
   padding: 0;
   margin: 0;
@@ -1482,7 +1454,6 @@ body.swal2-iosfix {
   left: auto;
 }
 
-/* calculate scrollbar width */
 p.fixed-table-scroll-inner {
   width: 100%;
   height: 200px;
@@ -1633,17 +1604,14 @@ table.dataTable thead .sorting_desc_disabled:after {
 table.dataTable thead .sorting:after {
   opacity: 0.2;
   content: "\e150";
-  /* sort */
 }
 
 table.dataTable thead .sorting_asc:after {
   content: "\e155";
-  /* sort-by-attributes */
 }
 
 table.dataTable thead .sorting_desc:after {
   content: "\e156";
-  /* sort-by-attributes-alt */
 }
 
 table.dataTable thead .sorting_asc_disabled:after,
@@ -1962,11 +1930,7 @@ div.dtr-modal div.dtr-modal-background {
     width: 95%;
   }
 }
-/*!
- * FullCalendar v3.1.0 Stylesheet
- * Docs & License: http://fullcalendar.io/
- * (c) 2016 Adam Shaw
- */
+
 .fc {
   direction: ltr;
   text-align: left;
@@ -1977,11 +1941,9 @@ div.dtr-modal div.dtr-modal-background {
 }
 
 body .fc {
-  /* extra precedence to overcome jqui */
   font-size: 1em;
 }
 
-/* Colors
 --------------------------------------------------------------------------------------------------*/
 .fc-unthemed th,
 .fc-unthemed td,
@@ -2011,29 +1973,23 @@ body .fc {
 }
 
 .fc-highlight {
-  /* when user is selecting cells */
   background: #bce8f1;
   opacity: .3;
   filter: alpha(opacity=30);
-  /* for IE */
 }
 
 .fc-bgevent {
-  /* default look for background events */
   background: #8fdf82;
   opacity: .3;
   filter: alpha(opacity=30);
-  /* for IE */
 }
 
 .fc-nonbusiness {
-  /* default look for non-business-hours areas */
-  /* will inherit .fc-bgevent's styles */
+
   background: #d7d7d7;
 }
 
-/* Icons (inline elements with styled text that mock arrow icons)
---------------------------------------------------------------------------------------------------*/
+
 .fc-icon {
   display: inline-block;
   width: 1em;
@@ -2043,7 +1999,6 @@ body .fc {
   text-align: center;
   overflow: hidden;
   font-family: "Courier New", Courier, monospace;
-  /* don't allow browser text-selection */
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -2052,17 +2007,10 @@ body .fc {
   user-select: none;
 }
 
-/*
-Acceptable font-family overrides for individual icons:
-	"Arial", sans-serif
-	"Times New Roman", serif
 
-NOTE: use percentage font sizes or else old IE chokes
-*/
 .fc-icon:after {
   position: relative;
   margin: 0 -1em;
-  /* ensures character will be centered, regardless of width */
 }
 
 .fc-icon-left-single-arrow:after {
@@ -2119,8 +2067,7 @@ NOTE: use percentage font sizes or else old IE chokes
   top: 6%;
 }
 
-/* Buttons (styled <button> tags, normalized to work cross-browser)
---------------------------------------------------------------------------------------------------*/
+
 .fc button {
   border-radius: 20px;
   box-sizing: border-box;
@@ -2189,31 +2136,23 @@ NOTE: use percentage font sizes or else old IE chokes
   margin-right: 0px;
 }
 
-/* Firefox has an annoying inner border */
 .fc button::-moz-focus-inner {
   margin: 0;
   padding: 0;
 }
 
 .fc-state-default {
-  /* non-theme */
   border: 1px solid;
 }
 
-/* icons in buttons */
 .fc button .fc-icon {
-  /* non-theme */
   position: relative;
   top: -0.05em;
-  /* seems to be a good adjustment across browsers */
   margin: 0 .2em;
   vertical-align: middle;
 }
 
-/*
-  button states
-  borrowed from twitter bootstrap (http://twitter.github.com/bootstrap/)
-*/
+
 .fc-state-hover,
 .fc-state-active,
 .fc-state-disabled {
@@ -2246,29 +2185,19 @@ NOTE: use percentage font sizes or else old IE chokes
   color: #FFFFFF;
 }
 
-/* Buttons Groups
---------------------------------------------------------------------------------------------------*/
 .fc-button-group {
   display: inline-block;
 }
 
-/*
-every button that is not first in a button group should scootch over one pixel and cover the
-previous button's border...
-*/
 .fc .fc-button-group > * {
-  /* extra precedence b/c buttons have margin set to zero */
   float: left;
   margin: 0 2px 0 0;
 }
 
 .fc .fc-button-group > :first-child {
-  /* same */
   margin-left: 0;
 }
 
-/* Popover
---------------------------------------------------------------------------------------------------*/
 .fc-popover {
   position: absolute;
   -webkit-box-shadow: 0 2px rgba(17, 16, 15, 0.1), 0 2px 10px rgba(17, 16, 15, 0.1);
@@ -2276,7 +2205,6 @@ previous button's border...
 }
 
 .fc-popover .fc-header {
-  /* TODO: be more consistent with fc-head/fc-body */
   padding: 2px 4px;
 }
 
@@ -2298,7 +2226,6 @@ previous button's border...
   float: right;
 }
 
-/* unthemed */
 .fc-unthemed .fc-popover {
   border-width: 1px;
   border-style: solid;
@@ -2309,14 +2236,11 @@ previous button's border...
   margin-top: 2px;
 }
 
-/* jqui themed */
 .fc-popover > .ui-widget-header + .ui-widget-content {
   border-top: 0;
-  /* where they meet, let the header have the border */
 }
 
-/* Misc Reusable Components
---------------------------------------------------------------------------------------------------*/
+
 .fc-divider {
   border-style: solid;
   border-width: 1px;
@@ -2326,7 +2250,6 @@ hr.fc-divider {
   height: 0;
   margin: 0;
   padding: 0 0 2px;
-  /* height is unreliable across browsers, so use padding */
   border-width: 1px 0;
 }
 
@@ -2338,7 +2261,6 @@ hr.fc-divider {
 .fc-bgevent-skeleton,
 .fc-highlight-skeleton,
 .fc-helper-skeleton {
-  /* these element should always cling to top-left/right corners */
   position: absolute;
   top: 0;
   left: 0;
@@ -2347,23 +2269,19 @@ hr.fc-divider {
 
 .fc-bg {
   bottom: 0;
-  /* strech bg to bottom edge */
 }
 
 .fc-bg table {
   height: 100%;
-  /* strech bg to bottom edge */
 }
 
-/* Tables
---------------------------------------------------------------------------------------------------*/
+
 .fc table {
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
   border-spacing: 0;
   font-size: 1em;
-  /* normalize cross-browser */
 }
 
 .fc th {
@@ -2385,7 +2303,6 @@ hr.fc-divider {
 
 .fc td.fc-today {
   border-style: double;
-  /* overcome neighboring borders */
 }
 
 .fc .fc-widget-header {
@@ -2396,31 +2313,22 @@ hr.fc-divider {
   margin-top: 15px;
 }
 
-/* Fake Table Rows
---------------------------------------------------------------------------------------------------*/
+
 .fc .fc-row {
-  /* extra precedence to overcome themes w/ .ui-widget-content forcing a 1px border */
-  /* no visible border by default. but make available if need be (scrollbar width compensation) */
   border-style: solid;
   border-width: 0;
 }
 
 .fc-row table {
-  /* don't put left/right border on anything within a fake row.
-     the outer tbody will worry about this */
   border-left: 0 hidden transparent;
   border-right: 0 hidden transparent;
-  /* no bottom borders on rows */
   border-bottom: 0 hidden transparent;
 }
 
 .fc-row:first-child table {
   border-top: 0 hidden transparent;
-  /* no top border on first row */
 }
 
-/* Day Row (used within the header and the DayGrid)
---------------------------------------------------------------------------------------------------*/
 .fc-row {
   position: relative;
 }
@@ -2429,17 +2337,14 @@ hr.fc-divider {
   z-index: 1;
 }
 
-/* highlighting cells & background event skeleton */
 .fc-row .fc-bgevent-skeleton,
 .fc-row .fc-highlight-skeleton {
   bottom: 0;
-  /* stretch skeleton to bottom of row */
 }
 
 .fc-row .fc-bgevent-skeleton table,
 .fc-row .fc-highlight-skeleton table {
   height: 100%;
-  /* stretch skeleton to bottom of row */
 }
 
 .fc-row .fc-highlight-skeleton td,
@@ -2455,15 +2360,10 @@ hr.fc-divider {
   z-index: 3;
 }
 
-/*
-row content (which contains day/week numbers and events) as well as "helper" (which contains
-temporary rendered events).
-*/
 .fc-row .fc-content-skeleton {
   position: relative;
   z-index: 4;
   padding-bottom: 2px;
-  /* matches the space above the events */
 }
 
 .fc-row .fc-helper-skeleton {
@@ -2472,52 +2372,37 @@ temporary rendered events).
 
 .fc-row .fc-content-skeleton td,
 .fc-row .fc-helper-skeleton td {
-  /* see-through to the background below */
   background: none;
-  /* in case <td>s are globally styled */
   border-color: transparent;
-  /* don't put a border between events and/or the day number */
   border-bottom: 0;
 }
 
 .fc-row .fc-content-skeleton tbody td,
 .fc-row .fc-helper-skeleton tbody td {
-  /* don't put a border between event cells */
   border-top: 0;
 }
 
-/* Scrolling Container
---------------------------------------------------------------------------------------------------*/
+
 .fc-scroller {
-  /* this class goes on elements for guaranteed vertical scrollbars */
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
 .fc-scroller > * {
-  /* we expect an immediate inner element */
   position: relative;
-  /* re-scope all positions */
   width: 100%;
-  /* hack to force re-sizing this inner element when scrollbars appear/disappear */
   overflow: hidden;
-  /* don't let negative margins or absolute positioning create further scroll */
 }
 
-/* Global Event Styles
---------------------------------------------------------------------------------------------------*/
+
 .fc-event {
   position: relative;
-  /* for resize handle and other inner positioning */
   display: block;
-  /* make the <a> tag block */
   font-size: .85em;
   line-height: 1.3;
   border-radius: 2px;
   background-color: rgba(122, 158, 159, 0.2);
-  /* default BACKGROUND color */
   font-weight: normal;
-  /* undo jqui's ui-widget-header bold */
 }
 .fc-event.event-azure {
   background-color: rgba(104, 179, 200, 0.2);
@@ -2532,35 +2417,28 @@ temporary rendered events).
   background-color: rgba(235, 94, 40, 0.2);
 }
 
-/* overpower some of bootstrap's and jqui's styles on <a> tags */
 .fc-event,
 .fc-event:hover,
 .ui-widget .fc-event {
   color: #333333;
-  /* default TEXT color */
   text-decoration: none;
-  /* if <a> has an href */
 }
 
 .fc-event[href],
 .fc-event.fc-draggable {
   cursor: pointer;
-  /* give events with links and draggable events a hand mouse pointer */
 }
 
 .fc-not-allowed,
 .fc-not-allowed .fc-event {
-  /* to override an event's custom cursor */
   cursor: not-allowed;
 }
 
 .fc-event .fc-bg {
-  /* the generic .fc-bg already does position */
   z-index: 1;
   background: #FFFFFF;
   opacity: .25;
   filter: alpha(opacity=25);
-  /* for IE */
 }
 
 .fc-event .fc-content {
@@ -2573,15 +2451,12 @@ temporary rendered events).
   z-index: 3;
 }
 
-/* Horizontal Events
---------------------------------------------------------------------------------------------------*/
-/* events that are continuing to/from another week. kill rounded corners and butt up against edge */
+
 .fc-ltr .fc-h-event.fc-not-start,
 .fc-rtl .fc-h-event.fc-not-end {
   margin-left: 0;
   border-left-width: 0;
   padding-left: 1px;
-  /* replace the border with padding */
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -2591,14 +2466,11 @@ temporary rendered events).
   margin-right: 0;
   border-right-width: 0;
   padding-right: 1px;
-  /* replace the border with padding */
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-/* resizer */
 .fc-h-event .fc-resizer {
-  /* positioned it to overcome the event's borders */
   top: -1px;
   bottom: -1px;
   left: -1px;
@@ -2606,7 +2478,6 @@ temporary rendered events).
   width: 5px;
 }
 
-/* left resizer  */
 .fc-ltr .fc-h-event .fc-start-resizer,
 .fc-ltr .fc-h-event .fc-start-resizer:before,
 .fc-ltr .fc-h-event .fc-start-resizer:after,
@@ -2614,11 +2485,9 @@ temporary rendered events).
 .fc-rtl .fc-h-event .fc-end-resizer:before,
 .fc-rtl .fc-h-event .fc-end-resizer:after {
   right: auto;
-  /* ignore the right and only use the left */
   cursor: w-resize;
 }
 
-/* right resizer */
 .fc-ltr .fc-h-event .fc-end-resizer,
 .fc-ltr .fc-h-event .fc-end-resizer:before,
 .fc-ltr .fc-h-event .fc-end-resizer:after,
@@ -2626,23 +2495,16 @@ temporary rendered events).
 .fc-rtl .fc-h-event .fc-start-resizer:before,
 .fc-rtl .fc-h-event .fc-start-resizer:after {
   left: auto;
-  /* ignore the left and only use the right */
   cursor: e-resize;
 }
 
-/* DayGrid events
-----------------------------------------------------------------------------------------------------
-We use the full "fc-day-grid-event" class instead of using descendants because the event won't
-be a descendant of the grid when it is being dragged.
-*/
+
 .fc-day-grid-event {
   margin: 2px 5px 0;
-  /* spacing between events and edges */
   padding: 1px 2px;
 }
 
 .fc-day-grid-event .fc-content {
-  /* force events to be one-line tall */
   white-space: nowrap;
   overflow: hidden;
 }
@@ -2652,15 +2514,12 @@ be a descendant of the grid when it is being dragged.
 }
 
 .fc-day-grid-event .fc-resizer {
-  /* enlarge the default hit area */
   left: -3px;
   right: -3px;
   width: 7px;
 }
 
-/* Event Limiting
---------------------------------------------------------------------------------------------------*/
-/* "more" link that represents hidden events */
+
 a.fc-more {
   margin: 1px 3px;
   font-size: .85em;
@@ -2673,14 +2532,11 @@ a.fc-more:hover {
 }
 
 .fc-limited {
-  /* rows and cells that are hidden because of a "more" link */
   display: none;
 }
 
-/* popover that appears when "more" link is clicked */
 .fc-day-grid .fc-row {
   z-index: 1;
-  /* make the "more" popover one higher than this */
 }
 
 .fc-more-popover {
@@ -2692,8 +2548,7 @@ a.fc-more:hover {
   padding: 10px;
 }
 
-/* Toolbar
---------------------------------------------------------------------------------------------------*/
+
 .fc-toolbar {
   text-align: center;
   margin-bottom: 1em;
@@ -2712,25 +2567,19 @@ a.fc-more:hover {
   display: inline-block;
 }
 
-/* the things within each left/right/center section */
 .fc .fc-toolbar > * > * {
-  /* extra precedence to override button border margins */
   float: left;
   margin-left: .75em;
 }
 
-/* the first thing within each left/center/right section */
 .fc .fc-toolbar > * > :first-child {
-  /* extra precedence to override button border margins */
   margin-left: 0;
 }
 
-/* title text */
 .fc-toolbar h2 {
   margin: 0;
 }
 
-/* button layering (for border precedence) */
 .fc-toolbar button {
   position: relative;
 }
@@ -2753,10 +2602,7 @@ a.fc-more:hover {
   z-index: 5;
 }
 
-/* View Structure
---------------------------------------------------------------------------------------------------*/
-/* undo twitter bootstrap's box-sizing rules. normalizes positioning techniques */
-/* don't do this for the toolbar because we'll want bootstrap to style those buttons as some pt */
+
 .fc-view-container *,
 .fc-view-container *:before,
 .fc-view-container *:after {
@@ -2767,29 +2613,21 @@ a.fc-more:hover {
 
 .fc-view,
 .fc-view > table {
-  /* so dragged elements can be above the view's main element */
   position: relative;
   z-index: 1;
 }
 
-/* BasicView
---------------------------------------------------------------------------------------------------*/
-/* day row structure */
+
 .fc-basicWeek-view .fc-content-skeleton,
 .fc-basicDay-view .fc-content-skeleton {
-  /* we are sure there are no day numbers in these views, so... */
   padding-top: 1px;
-  /* add a pixel to make sure there are 2px padding above events */
   padding-bottom: 1em;
-  /* ensure a space at bottom of cell for user selecting/clicking */
 }
 
 .fc-basic-view .fc-body .fc-row {
   min-height: 4em;
-  /* ensure that all rows are at least this tall */
 }
 
-/* a "rigid" row will take up a constant amount of height because content-skeleton is absolute */
 .fc-row.fc-rigid {
   overflow: hidden;
 }
@@ -2801,7 +2639,6 @@ a.fc-more:hover {
   right: 0;
 }
 
-/* week and day number styling */
 .fc-basic-view .fc-week-number,
 .fc-basic-view .fc-day-number {
   padding: 0 2px;
@@ -2817,7 +2654,6 @@ a.fc-more:hover {
 }
 
 .fc-basic-view .fc-week-number span {
-  /* work around the way we do column resizing and ensure a minimum width */
   display: inline-block;
   min-width: 1.25em;
 }
@@ -2833,36 +2669,25 @@ a.fc-more:hover {
 .fc-day-number.fc-other-month {
   opacity: 0.3;
   filter: alpha(opacity=30);
-  /* for IE */
-  /* opacity with small font can sometimes look too faded
-     might want to set the 'color' property instead
-     making day-numbers bold also fixes the problem */
 }
 
-/* AgendaView all-day area
---------------------------------------------------------------------------------------------------*/
+
 .fc-agenda-view .fc-day-grid {
   position: relative;
   z-index: 2;
-  /* so the "more.." popover will be over the time grid */
 }
 
 .fc-agenda-view .fc-day-grid .fc-row {
   min-height: 3em;
-  /* all-day section will never get shorter than this */
 }
 
 .fc-agenda-view .fc-day-grid .fc-row .fc-content-skeleton {
   padding-top: 1px;
-  /* add a pixel to make sure there are 2px padding above events */
   padding-bottom: 1em;
-  /* give space underneath events for clicking/selecting days */
 }
 
-/* TimeGrid axis running down the side (for both the all-day area and the slot area)
---------------------------------------------------------------------------------------------------*/
+
 .fc .fc-axis {
-  /* .fc to overcome default cell styles */
   vertical-align: middle;
   padding: 0 4px;
   white-space: nowrap;
@@ -2878,25 +2703,20 @@ a.fc-more:hover {
 
 .ui-widget td.fc-axis {
   font-weight: normal;
-  /* overcome jqui theme making it bold */
 }
 
-/* TimeGrid Structure
---------------------------------------------------------------------------------------------------*/
+
 .fc-time-grid-container,
 .fc-time-grid {
-  /* so slats/bg/content/etc positions get scoped within here */
   position: relative;
   z-index: 1;
 }
 
 .fc-time-grid {
   min-height: 100%;
-  /* so if height setting is 'auto', .fc-bg stretches to fill height */
 }
 
 .fc-time-grid table {
-  /* don't put outer borders on slats/bg/content/etc */
   border: 0 hidden transparent;
 }
 
@@ -2906,7 +2726,6 @@ a.fc-more:hover {
 
 .fc-time-grid .fc-slats,
 .fc-time-grid > hr {
-  /* the <hr> AgendaView injects when grid is shorter than scroller */
   position: relative;
   z-index: 2;
 }
@@ -2935,12 +2754,10 @@ a.fc-more:hover {
   z-index: 6;
 }
 
-/* TimeGrid Slats (lines that run horizontally)
---------------------------------------------------------------------------------------------------*/
+
 .fc-time-grid .fc-slats td {
   height: 1.5em;
   border-bottom: 0;
-  /* each cell is responsible for its top border */
 }
 
 .fc-time-grid .fc-slats .fc-minor td {
@@ -2948,41 +2765,30 @@ a.fc-more:hover {
 }
 
 .fc-time-grid .fc-slats .ui-widget-content {
-  /* for jqui theme */
   background: none;
-  /* see through to fc-bg */
 }
 
-/* TimeGrid Highlighting Slots
---------------------------------------------------------------------------------------------------*/
 .fc-time-grid .fc-highlight-container {
-  /* a div within a cell within the fc-highlight-skeleton */
   position: relative;
-  /* scopes the left/right of the fc-highlight to be in the column */
 }
 
 .fc-time-grid .fc-highlight {
   position: absolute;
   left: 0;
   right: 0;
-  /* top and bottom will be in by JS */
 }
 
-/* TimeGrid Event Containment
---------------------------------------------------------------------------------------------------*/
+
 .fc-time-grid .fc-event-container,
 .fc-time-grid .fc-bgevent-container {
-  /* a div within a cell within the fc-bgevent-skeleton */
   position: relative;
 }
 
 .fc-ltr .fc-time-grid .fc-event-container {
-  /* space on the sides of events for LTR (default) */
   margin: 0 2.5% 0 2px;
 }
 
 .fc-rtl .fc-time-grid .fc-event-container {
-  /* space on the sides of events for RTL */
   margin: 0 2px 0 2.5%;
 }
 
@@ -2990,44 +2796,31 @@ a.fc-more:hover {
 .fc-time-grid .fc-bgevent {
   position: absolute;
   z-index: 1;
-  /* scope inner z-index's */
 }
 
 .fc-time-grid .fc-bgevent {
-  /* background events always span full width */
   left: 0;
   right: 0;
 }
 
-/* Generic Vertical Event
---------------------------------------------------------------------------------------------------*/
+
 .fc-v-event.fc-not-start {
-  /* events that are continuing from another day */
-  /* replace space made by the top border with padding */
   border-top-width: 0;
   padding-top: 1px;
-  /* remove top rounded corners */
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
 .fc-v-event.fc-not-end {
-  /* replace space made by the top border with padding */
   border-bottom-width: 0;
   padding-bottom: 1px;
-  /* remove bottom rounded corners */
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-/* TimeGrid Event Styling
-----------------------------------------------------------------------------------------------------
-We use the full "fc-time-grid-event" class instead of using descendants because the event won't
-be a descendant of the grid when it is being dragged.
-*/
+
 .fc-time-grid-event {
   overflow: hidden;
-  /* don't let the bg flow over rounded corners */
 }
 
 .fc-time-grid-event .fc-time,
@@ -3040,42 +2833,33 @@ be a descendant of the grid when it is being dragged.
   white-space: nowrap;
 }
 
-/* short mode, where time and title are on the same line */
 .fc-time-grid-event.fc-short .fc-content {
-  /* don't wrap to second line (now that contents will be inline) */
   white-space: nowrap;
 }
 
 .fc-time-grid-event.fc-short .fc-time,
 .fc-time-grid-event.fc-short .fc-title {
-  /* put the time and title on the same line */
   display: inline-block;
   vertical-align: top;
 }
 
 .fc-time-grid-event.fc-short .fc-time span {
   display: none;
-  /* don't display the full time text... */
 }
 
 .fc-time-grid-event.fc-short .fc-time:before {
   content: attr(data-start);
-  /* ...instead, display only the start time */
 }
 
 .fc-time-grid-event.fc-short .fc-time:after {
   content: "\000A0-\000A0";
-  /* seperate with a dash, wrapped in nbsp's */
 }
 
 .fc-time-grid-event.fc-short .fc-title {
   font-size: .85em;
-  /* make the title text the same size as the time */
   padding: 0;
-  /* undo padding from above */
 }
 
-/* resizer */
 .fc-time-grid-event .fc-resizer {
   left: 0;
   right: 0;
@@ -3849,7 +3633,6 @@ be a descendant of the grid when it is being dragged.
   stroke: #EB5E28 !important;
 }
 
-/* perfect-scrollbar v0.6.10 */
 .ps-container {
   -ms-touch-action: none;
   touch-action: none;
@@ -3898,7 +3681,6 @@ be a descendant of the grid when it is being dragged.
 .ps-container > .ps-scrollbar-x-rail {
   display: none;
   position: absolute;
-  /* please don't change 'position' */
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -3908,13 +3690,11 @@ be a descendant of the grid when it is being dragged.
   -o-transition: background-color .2s linear, opacity .2s linear;
   transition: background-color .2s linear, opacity .2s linear;
   bottom: 3px;
-  /* there must be 'bottom' for ps-scrollbar-x-rail */
   height: 8px;
 }
 
 .ps-container > .ps-scrollbar-x-rail > .ps-scrollbar-x {
   position: absolute;
-  /* please don't change 'position' */
   background-color: #AAAAAA;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -3924,14 +3704,12 @@ be a descendant of the grid when it is being dragged.
   -o-transition: background-color .2s linear;
   transition: background-color .2s linear;
   bottom: 0;
-  /* there must be 'bottom' for ps-scrollbar-x */
   height: 8px;
 }
 
 .ps-container > .ps-scrollbar-y-rail {
   display: none;
   position: absolute;
-  /* please don't change 'position' */
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -3942,13 +3720,11 @@ be a descendant of the grid when it is being dragged.
   transition: background-color .2s linear, opacity .2s linear;
   right: 3px;
   z-index: 1042;
-  /* there must be 'right' for ps-scrollbar-y-rail */
   width: 8px;
 }
 
 .ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
   position: absolute;
-  /* please don't change 'position' */
   background-color: #AAAAAA;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -3958,7 +3734,6 @@ be a descendant of the grid when it is being dragged.
   -o-transition: background-color .2s linear;
   transition: background-color .2s linear;
   right: 0;
-  /* there must be 'right' for ps-scrollbar-y */
   width: 8px;
 }
 
@@ -4143,12 +3918,7 @@ svg {
   padding-left: 3px;
 }
 
-/*!
- * Bootstrap-select v1.12.1 (http://silviomoreto.github.io/bootstrap-select)
- *
- * Copyright 2013-2016 bootstrap-select
- * Licensed under MIT (https://github.com/silviomoreto/bootstrap-select/blob/master/LICENSE)
- */
+
 select.bs-select-hidden,
 select.selectpicker {
   display: none !important;
@@ -4156,7 +3926,6 @@ select.selectpicker {
 
 .bootstrap-select {
   width: 220px \0;
-  /*IE9 and below*/
 }
 .bootstrap-select > .dropdown-toggle {
   width: 100%;
@@ -4423,11 +4192,6 @@ select.selectpicker {
   float: none;
 }
 
-/*!
- * Datetimepicker for Bootstrap 3
- * ! version : 4.7.14
- * https://github.com/Eonasdan/bootstrap-datetimepicker/
- */
 .sr-only, .bootstrap-datetimepicker-widget .btn[data-action="incrementHours"]::after, .bootstrap-datetimepicker-widget .btn[data-action="incrementMinutes"]::after, .bootstrap-datetimepicker-widget .btn[data-action="decrementHours"]::after, .bootstrap-datetimepicker-widget .btn[data-action="decrementMinutes"]::after, .bootstrap-datetimepicker-widget .btn[data-action="showHours"]::after, .bootstrap-datetimepicker-widget .btn[data-action="showMinutes"]::after, .bootstrap-datetimepicker-widget .btn[data-action="togglePeriod"]::after, .bootstrap-datetimepicker-widget .btn[data-action="clear"]::after, .bootstrap-datetimepicker-widget .btn[data-action="today"]::after, .bootstrap-datetimepicker-widget .picker-switch::after, .bootstrap-datetimepicker-widget table th.prev::after, .bootstrap-datetimepicker-widget table th.next::after {
   position: absolute;
   width: 1px;
@@ -4717,11 +4481,7 @@ select.selectpicker {
   cursor: pointer;
 }
 
-/*! nouislider - 9.1.0 - 2016-12-10 16:00:32 */
-/* Functional styling;
- * These styles are required for noUiSlider to function.
- * You don't need to change these rules to apply your design.
- */
+
 .noUi-target,
 .noUi-target * {
   -webkit-touch-callout: none;
@@ -4746,7 +4506,6 @@ select.selectpicker {
   height: 100%;
   position: relative;
   z-index: 1;
-  /* Fix 401 */
 }
 
 .noUi-connect {
@@ -4778,38 +4537,27 @@ select.selectpicker {
   cursor: inherit !important;
 }
 
-/* Painting and performance;
- * Browsers can paint handles in their own layer.
- */
+
 .noUi-base,
 .noUi-handle {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
-/* Slider size and handle placement;
- */
+
 .noUi-horizontal {
   height: 8px;
 }
 
 .noUi-horizontal .noUi-handle {
   background: white;
-  /* Old browsers */
   background: -moz-linear-gradient(top, white 0%, #f1f1f2 100%);
-  /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #f1f1f2));
-  /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top, white 0%, #f1f1f2 100%);
-  /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(top, white 0%, #f1f1f2 100%);
-  /* Opera 11.10+ */
   background: -ms-linear-gradient(top, white 0%, #f1f1f2 100%);
-  /* IE10+ */
   background: linear-gradient(to bottom, white 0%, #f1f1f2 100%);
-  /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white-color', endColorstr='#f1f1f2',GradientType=0 );
-  /* IE6-9 */
   border-radius: 50%;
   box-shadow: 0 1px 1px #FFFFFF inset, 0 1px 2px rgba(0, 0, 0, 0.4);
   height: 15px;
@@ -4830,8 +4578,7 @@ select.selectpicker {
   top: -17px;
 }
 
-/* Styling;
- */
+
 .noUi-target {
   background-color: #E5E5E5;
   border-radius: 3px;
@@ -4844,8 +4591,7 @@ select.selectpicker {
   transition: background 450ms;
 }
 
-/* Handles and cursors;
- */
+
 .noUi-draggable {
   cursor: ew-resize;
 }
@@ -4865,10 +4611,7 @@ select.selectpicker {
   box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #DDD, 0 3px 6px -3px #BBB;
 }
 
-/* Handle stripes;
- */
-/* Disabled state;
- */
+
 [disabled] .noUi-connect {
   background: #B8B8B8;
 }
@@ -4879,9 +4622,7 @@ select.selectpicker {
   cursor: not-allowed;
 }
 
-/* Base;
- *
- */
+
 .noUi-pips,
 .noUi-pips * {
   -moz-box-sizing: border-box;
@@ -4893,9 +4634,7 @@ select.selectpicker {
   color: #999;
 }
 
-/* Values;
- *
- */
+
 .noUi-value {
   position: absolute;
   text-align: center;
@@ -4906,9 +4645,7 @@ select.selectpicker {
   font-size: 10px;
 }
 
-/* Markings;
- *
- */
+
 .noUi-marker {
   position: absolute;
   background: #CCC;
@@ -4922,9 +4659,7 @@ select.selectpicker {
   background: #AAA;
 }
 
-/* Horizontal layout;
- *
- */
+
 .noUi-pips-horizontal {
   padding: 10px 0;
   height: 80px;
@@ -4952,9 +4687,7 @@ select.selectpicker {
   height: 15px;
 }
 
-/* Vertical layout;
- *
- */
+
 .noUi-pips-vertical {
   padding: 0 10px;
   height: 100%;
@@ -6210,7 +5943,6 @@ strong {
   margin-bottom: 5px;
 }
 
-/*     General overwrite     */
 body {
   color: #66615b;
   font-size: 14px;
@@ -6249,7 +5981,6 @@ button:focus {
   outline: 0 !important;
 }
 
-/*           Animations              */
 .form-control,
 .input-group-addon,
 .tagsinput,
@@ -6595,16 +6326,7 @@ textarea.form-control {
   background-color: #EB5E28;
 }
 
-/*!
- * jQuery UI Slider 1.10.4
- * http://jqueryui.com
- *
- * Copyright 2014 jQuery Foundation and other contributors
- * Released under the MIT license.
- * http://jquery.org/license
- *
- * http://api.jqueryui.com/slider/#theming
- */
+
 .ui-slider {
   border-radius: 3px;
   position: relative;
@@ -6631,7 +6353,6 @@ textarea.form-control {
   z-index: 1;
 }
 
-/* For IE8 - See #6727 */
 .ui-slider.ui-state-disabled .ui-slider-handle,
 .ui-slider.ui-state-disabled .ui-slider-range {
   filter: inherit;
@@ -6683,8 +6404,7 @@ textarea.form-control {
   top: 0;
 }
 
-/* Component containers
-----------------------------------*/
+
 .ui-widget {
   font-size: 1.1em;
 }
@@ -6738,27 +6458,18 @@ textarea.form-control {
   background-color: #EB5E28;
 }
 
-/* Interaction states
-----------------------------------*/
+
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
   background: white;
-  /* Old browsers */
   background: -moz-linear-gradient(top, white 0%, #f1f1f2 100%);
-  /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #f1f1f2));
-  /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top, white 0%, #f1f1f2 100%);
-  /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(top, white 0%, #f1f1f2 100%);
-  /* Opera 11.10+ */
   background: -ms-linear-gradient(top, white 0%, #f1f1f2 100%);
-  /* IE10+ */
   background: linear-gradient(to bottom, white 0%, #f1f1f2 100%);
-  /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white-color', endColorstr='#f1f1f2',GradientType=0 );
-  /* IE6-9 */
   border-radius: 50%;
   box-shadow: 0 1px 1px #FFFFFF inset, 0 1px 2px rgba(0, 0, 0, 0.4);
   height: 15px;
@@ -6792,8 +6503,7 @@ textarea.form-control {
   text-decoration: none;
 }
 
-/* Interaction Cues
-----------------------------------*/
+
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
@@ -6852,7 +6562,6 @@ textarea.form-control {
 
 .ui-state-disabled .ui-icon {
   filter: Alpha(Opacity=35);
-  /* For IE8 - See #6059 */
 }
 
 form label.radio, form label.checkbox {
@@ -8390,7 +8099,6 @@ star {
   margin-top: 5px;
 }
 
-/*           Labels & Progress-bar              */
 .label {
   padding: 3px 8px;
   border-radius: 12px;
@@ -9722,10 +9430,7 @@ star {
   color: #35465c;
 }
 
-/*
- * bootstrap-tagsinput v0.8.0
- *
- */
+
 .bootstrap-tagsinput {
   display: inline-block;
   padding: 4px 6px;
@@ -9942,26 +9647,7 @@ star {
   transform: translate3d(5px, 0, 0);
 }
 
-/* ========================================================================
- * bootstrap-switch - v3.3.2
- * http://www.bootstrap-switch.org
- * ========================================================================
- * Copyright 2012-2013 Mattia Larentis
- *
- * ========================================================================
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * ========================================================================
- */
+
 .bootstrap-switch {
   display: inline-block;
   direction: ltr;
@@ -10313,7 +9999,6 @@ star {
   margin-top: 30px;
 }
 .register-page .media {
-  /*         color: $white-color; */
   margin-bottom: 45px;
 }
 .register-page .media .icon {
@@ -10334,7 +10019,6 @@ star {
   padding-bottom: 0;
 }
 
-/*             Navigation Tabs                 */
 .nav-tabs-navigation {
   text-align: center;
   border-bottom: 1px solid #F1EAE0;
@@ -10445,7 +10129,6 @@ star {
   padding: 6px 15px;
 }
 
-/*             Navigation Pills               */
 .nav-pills > li + li {
   margin-left: 0;
 }
@@ -10759,9 +10442,7 @@ star {
   }
 
   .card form {
-    /*[class*="col-"]{
-        padding: 6px;
-    }*/
+
   }
   .card form [class*="col-"]:first-child {
     padding-left: 15px;
@@ -10795,7 +10476,6 @@ star {
     transition: opacity 150ms ease-in;
   }
 }
-/*          Changes for small display      */
 @media (max-width: 992px) {
   .navbar-form {
     margin: 25px 0 0;

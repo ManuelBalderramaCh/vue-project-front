@@ -16,7 +16,6 @@
       </button>
     </div>
 
-    <!-- Task table -->
     <table class="table table-bordered mt-5">
       <thead>
         <tr>
@@ -30,23 +29,10 @@
       </thead>
       <tbody>
         <tr v-for="task in tasks" :key="task._id">
-          <!-- <td>
-            <span :class="{ 'line-through': task.status === 'finished' }">
-              {{ task.name }}
-            </span>
-          </td> -->
+         
           <td>
-            <!-- <span
-              class="pointer noselect"
-              @click="changeStatus(index)"
-              :class="{
-                'text-danger': task.status === 'to-do',
-                'text-success': task.status === 'finished',
-                'text-warning': task.status === 'in-progress',
-              }"
-            > -->
+            
               {{ capitalizeFirstChar(task._status) }}
-            <!-- </span> -->
           </td>
           <td>{{ task._priority }}</td>
           <td>{{ task._responsable }}</td>
@@ -84,15 +70,12 @@ export default {
       task: "",
       editedTask: null,
       statuses: ["to-do", "in-progress", "finished"],
-      /* Status could be: 'to-do' / 'in-progress' / 'finished' */
       tasks: null
     };
   },
 
   methods: {
-    /**
-     * Capitalize first character
-     */
+    
      list(){
       axios.get('http://localhost:3000/tasks')
       .then(res => this.tasks = res.data.obj);
@@ -101,18 +84,14 @@ export default {
       return str.charAt(0).toUpperCase() + str.slice(1);
     },
 
-    /**
-     * Change status of task by index
-     */
+    
     changeStatus(index) {
       let newIndex = this.statuses.indexOf(this.tasks[index].status);
       if (++newIndex > 2) newIndex = 0;
       this.tasks[index].status = this.statuses[newIndex];
     },
 
-    /**
-     * Deletes task by index
-     */
+   
      deleteTask(Taskid){
             axios.delete(`http://localhost:3000/tasks/${Taskid}`)
             .then(res => {
@@ -124,26 +103,20 @@ export default {
             });
         },
 
-    /**
-     * Edit task
-     */
+   
     editTask(index) {
       this.task = this.tasks[index].name;
       this.editedTask = index;
     },
 
-    /**
-     * Add / Update task
-     */
+    
     submitTask() {
       if (this.task.length === 0) return;
 
-      /* We need to update the task */
       if (this.editedTask != null) {
         this.tasks[this.editedTask].name = this.task;
         this.editedTask = null;
       } else {
-        /* We need to add new task */
         this.tasks.push({
           name: this.task,
           status: "todo",

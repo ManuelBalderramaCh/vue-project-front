@@ -1,8 +1,4 @@
-/*!
- * Datetimepicker for Bootstrap 3
- * ! version : 4.7.14
- * https://github.com/Eonasdan/bootstrap-datetimepicker/
- */
+
 $bs-datetimepicker-timepicker-font-size: 1.2em !default;
 $bs-datetimepicker-active-bg: $info-color !default;
 $bs-datetimepicker-active-color: $white-color !default;
@@ -243,14 +239,12 @@ $bs-datetimepicker-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !default;
 
         & td > div,
         & th > div {
-            // @extend .animation-transition-fast;
             text-align: center;
 
         }
 
 
         & th {
-            // @extend .animation-transition-fast;
 
             height: 20px;
             line-height: 20px;
@@ -388,7 +382,6 @@ $bs-datetimepicker-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !default;
             }
 
             span {
-                // @extend .animation-transition-fast;
 
                display: inline-block;
                 width: 56px;

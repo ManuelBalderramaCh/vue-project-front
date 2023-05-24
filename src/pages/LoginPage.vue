@@ -1,16 +1,13 @@
 <template>
     <div class="wrapper fadeInDown">
         <div id="formContent">
-            <!-- Tabs Titles -->
 
-            <!-- Icon -->
             <div class="fadeIn first">
                 <img src="https://cdn-icons-png.flaticon.com/512/6681/6681204.png" id="icon" 
                     alt="User Icon" style="width: 150px; height: 150px; margin-top: 5%; margin-bottom: 5%;" />
                     
             </div>
 
-            <!-- Login Form -->
             <form v-on:submit.prevent="login">
                 <h3 v-show="msg">{{ msg }}</h3>
 
@@ -20,7 +17,6 @@
                 <input type="submit" class="fadeIn fourth" value="Log In">
             </form>
 
-            <!-- Remind Passowrd -->
             <div id="formFooter">
                 <router-link class="underlineHover" to="/create-user">Create account</router-link>
             </div>
@@ -68,7 +64,7 @@ export default {
 };
 </script>
 
-<style scoped> /* BASIC */
+<style scoped> 
 
  html {
      background-color: #56baed;
@@ -98,7 +94,6 @@ export default {
 
 
 
- /* STRUCTURE */
 
  .wrapper {
      display: flex;
@@ -135,7 +130,6 @@ export default {
 
 
 
- /* TABS */
 
  h2.inactive {
      color: #cccccc;
@@ -148,7 +142,6 @@ export default {
 
 
 
- /* FORM TYPOGRAPHY*/
 
  input[type=button],
  input[type=submit],
@@ -253,9 +246,7 @@ export default {
  }
 
 
- /* ANIMATIONS */
 
- /* Simple CSS3 Fade-in-down Animation */
  .fadeInDown {
      -webkit-animation-name: fadeInDown;
      animation-name: fadeInDown;
@@ -293,7 +284,6 @@ export default {
      }
  }
 
- /* Simple CSS3 Fade-in Animation */
  @-webkit-keyframes fadeIn {
      from {
          opacity: 0;
@@ -363,7 +353,6 @@ export default {
      animation-delay: 1s;
  }
 
- /* Simple CSS3 Fade-in Animation */
  .underlineHover:after {
      display: block;
      left: 0;
@@ -385,7 +374,6 @@ export default {
 
 
 
- /* OTHERS */
 
  *:focus {
      outline: none;
