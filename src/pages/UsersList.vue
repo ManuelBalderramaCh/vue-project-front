@@ -81,6 +81,7 @@ export default {
             axios.delete(`http://localhost:3000/members/${memberId}`)
             .then(res => {
                 console.log(res);
+                this.list();
             }).catch(err => {
                 this.msg = err.response.data.message;
                 console.log(err);

@@ -1,9 +1,9 @@
 <template>
   <div class="container" style="max-width: 1200px">
-    <!-- Heading -->
+  
     <h2 class="text-center mt-5">Tasks Lists</h2>
 
-    <!-- Input -->
+  
     <div class="d-flex mt-5">
       <input
         type="text"
@@ -20,21 +20,21 @@
     <table class="table table-bordered mt-5">
       <thead>
         <tr>
-          <th scope="col">Task</th>
+          <th scope="col">Priority</th>
           <th scope="col" style="width: 120px">Status</th>
           <th scope="col" style="width: 120px">Responsible</th>
-          <th scope="col" style="width: 120px">Priority</th>
-          <th scope="col" class="text-center">#</th>
-          <th scope="col" class="text-center">#</th>
+          <th scope="col" style="width: 120px">#</th>
+          <th scope="col" style="width: 120px">#</th>
+          <th scope="col" class="text-center">Tasks</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(task, index) in tasks" :key="index">
-          <td>
+          <!-- <td>
             <span :class="{ 'line-through': task.status === 'finished' }">
               {{ task.name }}
             </span>
-          </td>
+          </td> -->
           <td>
             <span
               class="pointer noselect"
@@ -60,6 +60,11 @@
               <p class="fa fa-pen pointer"></p>
             </div>
           </td>
+          <td class="text-center">
+            <span :class="{ 'line-through': task.status === 'finished' }">
+              {{ task.name }}
+            </span>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -81,16 +86,16 @@ export default {
       /* Status could be: 'to-do' / 'in-progress' / 'finished' */
       tasks: [
         {
-          name: "Steal bananas from the supermarket.",
+          name: "",
           status: "to-do",
         },
         {
-          name: "Eat 1 kg chocolate in 1 hour.",
-          status: "in-progress",
+          name: "",
+          status: "to-do",
         },
         {
-          name: "Create YouTube video.",
-          status: "finished",
+          name: "",
+          status: "to-do",
         },
       ],
     };
