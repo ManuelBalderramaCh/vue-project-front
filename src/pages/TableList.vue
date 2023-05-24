@@ -29,6 +29,8 @@
                     <td>{{ project._startUpDate }}</td>
                     <td><router-link to="/admin/overview" tag="button"
                                         class="btn btn-light btn-sm">Ir</router-link></td>
+                    <td><button type="button" tag="button" class="btn btn-info btn-sm" @click="edit(project._id)">Edit</button></td>
+                    <td><button type="button" tag="button" class="btn btn-danger btn-sm" @click="deleteP(project._id)">Delete</button></td>
                   </tr>
                 </tbody>
               </table>
@@ -56,7 +58,26 @@ export default {
     list(){
       axios.get('http://localhost:3000/projects')
       .then(res => this.projects = res.data.obj);
-    }
+    },
+    edit(projectId){
+            axios.get(`http://localhost:3000/projects/${projectId}`)
+            .then(res => {
+                console.log(res);
+                this.$router.push(`/admin/project/${projectId}`)
+            }).catch(err => {
+                this.msg = err.response.data.message;
+                console.log(err);
+            });
+    },
+    deleteP(projectId){
+        axios.delete(`http://localhost:3000/projects/${projectId}`)
+        .then(res => {
+            console.log(res);
+        }).catch(err => {
+            this.msg = err.response.data.message;
+            console.log(err);
+        });
+    },
   },
   mounted(){
     this.list();

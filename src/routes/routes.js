@@ -31,7 +31,7 @@ const routes = [
         component: Overview
       },
       {
-        path: 'project',
+        path: 'project/:id',
         name: 'Project Management',
         component: ProjectManagement
       },

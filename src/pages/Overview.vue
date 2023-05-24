@@ -1,5 +1,5 @@
 <template>
-  <div class="container" style="max-width: 600px">
+  <div class="container" style="max-width: 1200px">
     <!-- Heading -->
     <h2 class="text-center mt-5">Tasks Lists</h2>
 
@@ -23,7 +23,9 @@
           <th scope="col">Task</th>
           <th scope="col" style="width: 120px">Status</th>
           <th scope="col" class="text-center">#</th>
-          <th scope="col" style="width: 50px;" class="text-center">#</th>
+          <th scope="col" class="text-center">#</th>
+          <th scope="col" class="text-center">Priority</th>
+          <th scope="col" class="text-center">Working On</th>
         </tr>
       </thead>
       <tbody>
@@ -56,6 +58,10 @@
               <p class="fa fa-pen pointer"></p>
             </div>
           </td>
+          <td>
+            High
+          </td>
+          <td>Miguel</td>
         </tr>
       </tbody>
     </table>
@@ -74,7 +80,6 @@ export default {
       task: "",
       editedTask: null,
       statuses: ["to-do", "in-progress", "finished"],
-
       /* Status could be: 'to-do' / 'in-progress' / 'finished' */
       tasks: [
         {
@@ -150,19 +155,5 @@ export default {
 </script>
 
 <style scoped>
-.pointer {
-  cursor: pointer;
-}
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-}
-.line-through {
-  text-decoration: line-through;
-}
+
 </style>
