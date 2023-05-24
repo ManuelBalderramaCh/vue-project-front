@@ -22,12 +22,10 @@
         <tr>
           <th scope="col">Task</th>
           <th scope="col" style="width: 120px">Status</th>
-          <th scope="col" style="width: 120px">Responsable</th>
-          <th scope="col" style="width: 120px">Prioridad</th>
+          <th scope="col" style="width: 120px">Responsible</th>
+          <th scope="col" style="width: 120px">Priority</th>
           <th scope="col" class="text-center">#</th>
           <th scope="col" class="text-center">#</th>
-          <th scope="col" class="text-center">Priority</th>
-          <th scope="col" class="text-center">Working On</th>
         </tr>
       </thead>
       <tbody>
@@ -62,10 +60,6 @@
               <p class="fa fa-pen pointer"></p>
             </div>
           </td>
-          <td>
-            High
-          </td>
-          <td>Miguel</td>
         </tr>
       </tbody>
     </table>

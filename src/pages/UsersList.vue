@@ -5,8 +5,8 @@
                 <div class="col-12">
                     <card class="strpied-tabled-with-hover" body-classes="table-full-width table-responsive">
                         <template slot="header">
-                            <h4 class="card-title">Active users</h4>
-                            <p class="card-category">Here is a list of users in projects</p>
+                            <h4 class="card-title">Registered Members</h4>
+                            <p class="card-category">Here is a list of members</p>
                         </template>
                         
                         <table class="table-hover table-striped" style="padding: 15%; width: 100%; margin-left: 1%;">

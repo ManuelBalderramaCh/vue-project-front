@@ -6,10 +6,7 @@
         <i class="nc-icon nc-chart-pie-35"></i>
         <p>Dashboard</p>
       </sidebar-link>
-      <sidebar-link to="/admin/project">
-        <i class="nc-icon nc-app"></i>
-        <p>Project Management</p>
-      </sidebar-link>
+
       <sidebar-link to="/admin/table-list">
         <i class="nc-icon nc-notes"></i>
         <p>Projects List</p>
@@ -20,9 +17,9 @@
       </sidebar-link>
 
       <template slot="bottom-links">
-        <sidebar-link class="active" to="/admin/user">
+        <sidebar-link class="active" to="/create-user">
           <i class="nc-icon nc-circle-09"></i>
-          <p>User profile</p>
+          <p>Create new member</p>
         </sidebar-link>
       </template>
     </side-bar>
