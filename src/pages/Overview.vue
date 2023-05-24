@@ -50,10 +50,10 @@
           </td>
           <td>{{ task._priority }}</td>
           <td>{{ task._responsable }}</td>
-          <td class="text-center">
-            <div @click="deleteTask(index)">
+          <td class="text-center"><button>
+            <div @click="deleteTask(task._id)">
               <span class="fa fa-trash pointer"></span>
-            </div>
+            </div></button>
           </td>
           <td class="text-center">
             <div @click="editTask(index)">
@@ -113,9 +113,16 @@ export default {
     /**
      * Deletes task by index
      */
-    deleteTask(index) {
-      this.tasks.splice(index, 1);
-    },
+     deleteTask(Taskid){
+            axios.delete(`http://localhost:3000/tasks/${Taskid}`)
+            .then(res => {
+                console.log(res);
+                this.list();
+            }).catch(err => {
+                this.msg = err.response.data.message;
+                console.log(err);
+            });
+        },
 
     /**
      * Edit task
