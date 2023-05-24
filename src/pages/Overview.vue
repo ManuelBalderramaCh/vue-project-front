@@ -22,6 +22,8 @@
         <tr>
           <th scope="col">Task</th>
           <th scope="col" style="width: 120px">Status</th>
+          <th scope="col" style="width: 120px">Responsable</th>
+          <th scope="col" style="width: 120px">Prioridad</th>
           <th scope="col" class="text-center">#</th>
           <th scope="col" style="width: 50px;" class="text-center">#</th>
         </tr>
@@ -46,6 +48,8 @@
               {{ capitalizeFirstChar(task.status) }}
             </span>
           </td>
+          <td></td>
+          <td></td>
           <td class="text-center">
             <div @click="deleteTask(index)">
               <span class="fa fa-trash pointer"></span>
