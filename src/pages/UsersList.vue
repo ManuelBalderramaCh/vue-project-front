@@ -15,11 +15,11 @@
                                     <th scope="col">First Name</th>
                                     <th scope="col">Last Name</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Project</th>
-                                    <th scope="col">Ability</th>
                                     <th scope="col">CURP</th>
                                     <th scope="col">RFC</th>
-                                    <th scope="col">ROLE</th>
+                                    <th scope="col">Project</th>
+                                    <th scope="col">Ability</th>
+                                    <th scope="col">Role</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -28,13 +28,13 @@
                                 <td>{{ member._name }}</td>
                                 <td>{{ member._lastName }}</td>
                                 <td>{{ member._email }}</td>
-                                <td>{{ member._project }}</td>
-                                <td>{{ member._abilities }}</td>
                                 <td>{{ member._curp }}</td>
                                 <td>{{ member._rfc }}</td>
+                                <td>{{ member._project }}</td>
+                                <td>{{ member._abilities }}</td>
                                 <td>{{ member._role }}</td>
-                                <td><router-link to="/admin/user" tag="button"
-                                        class="btn btn-light btn-sm">Editar</router-link></td>
+                                <td><button type="button" tag="button" class="btn btn-info btn-sm" @click="edit(member._id)">Edit</button></td>
+                                <td><button type="button" tag="button" class="btn btn-danger btn-sm"  @click="deleteUser(member._id)">Eliminar</button></td>
                             </tr>
                             </tbody>
                         </table>
@@ -66,7 +66,26 @@ export default {
         list(){
             axios.get('http://localhost:3000/members')
             .then(res => this.members = res.data.obj);
-        }
+        },
+        edit(memberId){
+            axios.get(`http://localhost:3000/members/${memberId}`)
+            .then(res => {
+                console.log(res);
+                this.$router.push(`/admin/user/${memberId}`)
+            }).catch(err => {
+                this.msg = err.response.data.message;
+                console.log(err);
+            });
+        },
+        deleteUser(memberId){
+            axios.delete(`http://localhost:3000/members/${memberId}`)
+            .then(res => {
+                console.log(res);
+            }).catch(err => {
+                this.msg = err.response.data.message;
+                console.log(err);
+            });
+        },
     },
     mounted(){
         this.list();

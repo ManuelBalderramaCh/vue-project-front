@@ -36,7 +36,7 @@ const routes = [
         component: ProjectManagement
       },
       {
-        path: 'user',
+        path: 'user/:id',
         name: 'User',
         component: UserProfile
       },

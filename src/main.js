@@ -22,6 +22,8 @@ import LightBootstrap from "./light-bootstrap-main";
 
 // router setup
 import routes from "./routes/routes";
+import '@fortawesome/fontawesome-free/css/all.css'
+import '@fortawesome/fontawesome-free/js/all.js'
 
 import "./registerServiceWorker";
 // plugin setup

@@ -1,266 +1,168 @@
 <template>
-  <div class="content">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xl-3 col-md-6">
-          <stats-card>
-            <div slot="header" class="icon-warning">
-              <i class="nc-icon nc-chart text-warning"></i>
-            </div>
-            <div slot="content">
-              <p class="card-category">Taks Completed</p>
-              <h4 class="card-title">10</h4>
-            </div>
-            <div slot="footer">
-              <i class="fa fa-refresh"></i>Updated now
-            </div>
-          </stats-card>
-        </div>
+  <div class="container" style="max-width: 600px">
+    <!-- Heading -->
+    <h2 class="text-center mt-5">Tasks Lists</h2>
 
-        <div class="col-xl-3 col-md-6">
-          <stats-card>
-            <div slot="header" class="icon-success">
-              <i class="nc-icon nc-light-3 text-success"></i>
-            </div>
-            <div slot="content">
-              <p class="card-category">Revenue</p>
-              <h4 class="card-title">$1,345</h4>
-            </div>
-            <div slot="footer">
-              <i class="fa fa-calendar-o"></i>Last day
-            </div>
-          </stats-card>
-        </div>
-
-        <div class="col-xl-3 col-md-6">
-          <stats-card>
-            <div slot="header" class="icon-danger">
-              <i class="nc-icon nc-vector text-danger"></i>
-            </div>
-            <div slot="content">
-              <p class="card-category">Errors</p>
-              <h4 class="card-title">23</h4>
-            </div>
-            <div slot="footer">
-              <i class="fa fa-clock-o"></i>Last day
-            </div>
-          </stats-card>
-        </div>
-
-        <div class="col-xl-3 col-md-6">
-          <stats-card>
-            <div slot="header" class="icon-info">
-              <i class="nc-icon nc-favourite-28 text-primary"></i>
-            </div>
-            <div slot="content">
-              <p class="card-category">Followers</p>
-              <h4 class="card-title">+45</h4>
-            </div>
-            <div slot="footer">
-              <i class="fa fa-refresh"></i>Updated now
-            </div>
-          </stats-card>
-        </div>
-
-      </div>
-      <div class="row">
-        <div class="col-md-8">
-          <chart-card :chart-data="lineChart.data" :chart-options="lineChart.options"
-            :responsive-options="lineChart.responsiveOptions">
-            <template slot="header">
-              <h4 class="card-title">Project Progress</h4>
-              <p class="card-category">4 weeks performance</p>
-            </template>
-            <template slot="footer">
-              <div class="legend">
-                <i class="fa fa-circle text-info"></i> Open
-                <i class="fa fa-circle text-danger"></i> Click
-                <i class="fa fa-circle text-warning"></i> Click Second Time
-              </div>
-              <hr>
-              <div class="stats">
-                <i class="fa fa-history"></i> Updated 3 minutes ago
-              </div>
-            </template>
-          </chart-card>
-        </div>
-
-        <div class="col-md-4">
-          <chart-card :chart-data="pieChart.data" chart-type="Pie">
-            <template slot="header">
-              <h4 class="card-title">Status Statistics</h4>
-              <p class="card-category">Last Campaign Performance</p>
-            </template>
-            <template slot="footer">
-              <div class="legend">
-                <i class="fa fa-circle text-info"></i> Finished
-                <i class="fa fa-circle text-danger"></i> Not finished
-                <i class="fa fa-circle text-warning"></i> To do
-              </div>
-              <hr>
-              <div class="stats">
-                <i class="fa fa-clock-o"></i> Campaign sent 2 days ago
-              </div>
-            </template>
-          </chart-card>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6">
-          <chart-card :chart-data="barChart.data" :chart-options="barChart.options"
-            :chart-responsive-options="barChart.responsiveOptions" chart-type="Bar">
-            <template slot="header">
-              <h4 class="card-title">2023 tasks</h4>
-              <p class="card-category">All tasks including not finished</p>
-            </template>
-            <template slot="footer">
-              <div class="legend">
-                <i class="fa fa-circle text-info"></i> Requirements completed
-                <i class="fa fa-circle text-danger"></i> Requirements failed
-              </div>
-              <hr>
-              <div class="stats">
-                <i class="fa fa-check"></i> Data information certified
-              </div>
-            </template>
-          </chart-card>
-        </div>
-
-        <div class="col-md-6">
-          <card>
-            <template slot="header">
-              <h5 class="title">Tasks</h5>
-              <p class="category">Front End development</p>
-            </template>
-            <l-table :data="tableData.data" :columns="tableData.columns">
-              <template slot="columns"></template>
-
-              <template slot-scope="{row}">
-                <td>
-                  <base-checkbox v-model="row.checked"></base-checkbox>
-                </td>
-                <td>{{ row.title }}</td>
-                <td class="td-actions text-right">
-                  <button type="button" class="btn-simple btn btn-xs btn-info" v-tooltip.top-center="editTooltip">
-                    <i class="fa fa-edit"></i>
-                  </button>
-                  <button type="button" class="btn-simple btn btn-xs btn-danger" v-tooltip.top-center="deleteTooltip">
-                    <i class="fa fa-times"></i>
-                  </button>
-                </td>
-              </template>
-            </l-table>
-            <div class="footer">
-              <hr>
-              <div class="stats">
-                <i class="fa fa-history"></i> Updated 3 minutes ago
-              </div>
-            </div>
-          </card>
-
-        </div>
-      </div>
+    <!-- Input -->
+    <div class="d-flex mt-5">
+      <input
+        type="text"
+        v-model="task"
+        placeholder="Enter task"
+        class="w-100 form-control"
+      />
+      <button class="btn btn-warning rounded-0" @click="submitTask">
+        SUBMIT
+      </button>
     </div>
+
+    <!-- Task table -->
+    <table class="table table-bordered mt-5">
+      <thead>
+        <tr>
+          <th scope="col">Task</th>
+          <th scope="col" style="width: 120px">Status</th>
+          <th scope="col" class="text-center">#</th>
+          <th scope="col" style="width: 50px;" class="text-center">#</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(task, index) in tasks" :key="index">
+          <td>
+            <span :class="{ 'line-through': task.status === 'finished' }">
+              {{ task.name }}
+            </span>
+          </td>
+          <td>
+            <span
+              class="pointer noselect"
+              @click="changeStatus(index)"
+              :class="{
+                'text-danger': task.status === 'to-do',
+                'text-success': task.status === 'finished',
+                'text-warning': task.status === 'in-progress',
+              }"
+            >
+              {{ capitalizeFirstChar(task.status) }}
+            </span>
+          </td>
+          <td class="text-center">
+            <div @click="deleteTask(index)">
+              <span class="fa fa-trash pointer"></span>
+            </div>
+          </td>
+          <td class="text-center">
+            <div @click="editTask(index)">
+              <p class="fa fa-pen pointer"></p>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
-<script>
-import ChartCard from 'src/components/Cards/ChartCard.vue'
-import StatsCard from 'src/components/Cards/StatsCard.vue'
-import LTable from 'src/components/Table.vue'
 
+<script>
 export default {
-  components: {
-    LTable,
-    ChartCard,
-    StatsCard
+  name: "HelloWorld",
+  props: {
+    msg: String,
   },
+
   data() {
     return {
-      editTooltip: 'Edit Task',
-      deleteTooltip: 'Remove',
-      pieChart: {
-        data: {
-          labels: ['40%', '20%', '40%'],
-          series: [40, 20, 40]
-        }
-      },
-      lineChart: {
-        data: {
-          labels: ['9:00AM', '12:00AM', '3:00PM', '6:00PM', '9:00PM', '12:00PM', '3:00AM', '6:00AM'],
-          series: [
-            [287, 385, 490, 492, 554, 586, 698, 695],
-            [67, 152, 143, 240, 287, 335, 435, 437],
-            [23, 113, 67, 108, 190, 239, 307, 308]
-          ]
+      task: "",
+      editedTask: null,
+      statuses: ["to-do", "in-progress", "finished"],
+
+      /* Status could be: 'to-do' / 'in-progress' / 'finished' */
+      tasks: [
+        {
+          name: "Steal bananas from the supermarket.",
+          status: "to-do",
         },
-        options: {
-          low: 0,
-          high: 800,
-          showArea: false,
-          height: '245px',
-          axisX: {
-            showGrid: false
-          },
-          lineSmooth: true,
-          showLine: true,
-          showPoint: true,
-          fullWidth: true,
-          chartPadding: {
-            right: 50
-          }
+        {
+          name: "Eat 1 kg chocolate in 1 hour.",
+          status: "in-progress",
         },
-        responsiveOptions: [
-          ['screen and (max-width: 640px)', {
-            axisX: {
-              labelInterpolationFnc(value) {
-                return value[0]
-              }
-            }
-          }]
-        ]
-      },
-      barChart: {
-        data: {
-          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-          series: [
-            [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895],
-            [412, 243, 280, 580, 453, 353, 300, 364, 368, 410, 636, 695]
-          ]
+        {
+          name: "Create YouTube video.",
+          status: "finished",
         },
-        options: {
-          seriesBarDistance: 10,
-          axisX: {
-            showGrid: false
-          },
-          height: '245px'
-        },
-        responsiveOptions: [
-          ['screen and (max-width: 640px)', {
-            seriesBarDistance: 5,
-            axisX: {
-              labelInterpolationFnc(value) {
-                return value[0]
-              }
-            }
-          }]
-        ]
-      },
-      tableData: {
-        data: [
-          { title: 'Agregar botones de editar/eliminar en projects list y users list"', checked: false },
-          { title: 'Generar un nuevo ColumnsList.vue para mostrar las user history y agregarla a la side bar (Puedes guiarte con el apartado de icons en la side bar)', checked: false },
-          {
-            title: 'Cambiar el dashboard, me parece que se ve bien, quitar lo de arriba, podemos usar ya varias cosas de aqui',
-            checked: false
-          },
-          { title: 'Agregar creacion de proyecto y de usuario', checked: false },
-          { title: 'Agregar el login y estilizarlo', checked: false },
-          { title: 'No se como haremos para designar que proyecto se muestre en el dashboard, por si quiere cambiar de proyecto, tal vez poner a mero arriba de que proyectos mios (del usuario) y que le piquen y te muestre el que es ahi mismo', checked: false }
-        ]
+      ],
+    };
+  },
+
+  methods: {
+    /**
+     * Capitalize first character
+     */
+    capitalizeFirstChar(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    },
+
+    /**
+     * Change status of task by index
+     */
+    changeStatus(index) {
+      let newIndex = this.statuses.indexOf(this.tasks[index].status);
+      if (++newIndex > 2) newIndex = 0;
+      this.tasks[index].status = this.statuses[newIndex];
+    },
+
+    /**
+     * Deletes task by index
+     */
+    deleteTask(index) {
+      this.tasks.splice(index, 1);
+    },
+
+    /**
+     * Edit task
+     */
+    editTask(index) {
+      this.task = this.tasks[index].name;
+      this.editedTask = index;
+    },
+
+    /**
+     * Add / Update task
+     */
+    submitTask() {
+      if (this.task.length === 0) return;
+
+      /* We need to update the task */
+      if (this.editedTask != null) {
+        this.tasks[this.editedTask].name = this.task;
+        this.editedTask = null;
+      } else {
+        /* We need to add new task */
+        this.tasks.push({
+          name: this.task,
+          status: "todo",
+        });
       }
-    }
-  }
-}
+
+      this.task = "";
+    },
+  },
+};
 </script>
-<style></style>
+
+<style scoped>
+.pointer {
+  cursor: pointer;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+.line-through {
+  text-decoration: line-through;
+}
+</style>
