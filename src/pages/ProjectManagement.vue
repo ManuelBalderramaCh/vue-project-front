@@ -97,3 +97,111 @@ export default {
 
 </script>
 <style></style>
+
+<template>
+    <card>
+      <h4 slot="header" class="card-title">Edit Project</h4>
+      <form>
+        <div class="row">
+          <div class="col-md-5"> 
+            <base-input type="text" v-model="project.projectName" label="Project Name" :disabled="false" placeholder="Project Name" :value="project.projectName">
+            </base-input>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-4">
+            <base-input type="email" v-model="project.projectManager" label="Project Manager" :disabled="false" placeholder="Project Manager" :value="project.projectManager">
+            </base-input>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-3">
+            <base-input type="text" v-model="project.productOwner" label="Product Owner" placeholder="Product Owner" :value="project.productOwner">
+            </base-input>
+          </div>
+          <div class="col-md-3">
+            <base-input type="text" v-model="project.applicationDate" label="Application Date" placeholder="Application Date" :value="project.applicationDate" >
+            </base-input>
+          </div>
+          <div class="col-md-3">
+            <base-input type="text" v-model="project.startUpDate" label="Start Up Date" placeholder="Start Up Date" :value="project.startUpDate">
+            </base-input>
+          </div>
+          <div class="col-md-3">
+            <base-input type="text" v-model="project.developer" label="Developers List" placeholder="Developers List" :value="project.developer">
+            </base-input>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-5">
+            <base-input type="text" v-model="project.aboutMe" label="About Me" placeholder="About Me" :value="project.aboutMe" >
+            </base-input>
+          </div>
+        </div>
+  
+        
+        <div class="text-center">
+          <button type="submit" class="btn btn-info btn-fill float-right" @click.prevent="edit(project._id)">
+            Update Project
+          </button>
+        </div>
+        <div class="clearfix"></div>
+      </form>
+    </card>
+  </template>
+  <script>
+  import Card from 'src/components/Cards/Card.vue'
+  import axios from 'axios';
+  
+  export default {
+    components: {
+      Card
+    },
+    data() {
+      return {
+        project: {
+                  projectName: '',
+                  applicationDate: '',
+                  startUpDate: '',
+                  projectManager: '',
+                  productOwner: '',
+                  developer: '',
+                  aboutMe: '',
+              },
+        id: this.$route.params.id,
+      }
+    },
+    methods: {
+      list(){
+        axios.get('http://localhost:3000/members/' + this.id)
+        .then(res => this.project = res.data.obj);
+      },
+      edit(projectId){
+            axios.put(`http://localhost:3000/members/${projectId}`, {
+                projectName: this.project._projectName,
+                applicationDate: this.project._applicationDate,
+                startUpDate: this.project._startUpDate,
+                projectManager: this.project._projectManager,
+                productOwner: this.project._productOwner,
+                developer: this.project._developer,
+                aboutMe: this.project._aboutMe,
+            })
+            .then(res => {
+                console.log(res);
+                this.$router.push('/admin/projects')
+            }).catch(err => {
+                this.msg = err.response.data.message;
+                console.log(err);
+            });
+        }
+    },
+    mounted(){
+      this.list();
+    }
+  }
+  
+  </script>
+  <style></style>
