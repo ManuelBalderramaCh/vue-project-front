@@ -20,8 +20,8 @@
     <table class="table table-bordered mt-5">
       <thead>
         <tr>
-          <th scope="col">Priority</th>
-          <th scope="col" style="width: 120px">Status</th>
+          <th scope="col">Status</th>
+          <th scope="col" style="width: 120px">Priority</th>
           <th scope="col" style="width: 120px">Responsible</th>
           <th scope="col" style="width: 120px">#</th>
           <th scope="col" style="width: 120px">#</th>
@@ -29,14 +29,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(task, index) in tasks" :key="index">
+        <tr v-for="task in tasks" :key="task._id">
           <!-- <td>
             <span :class="{ 'line-through': task.status === 'finished' }">
               {{ task.name }}
             </span>
           </td> -->
           <td>
-            <span
+            <!-- <span
               class="pointer noselect"
               @click="changeStatus(index)"
               :class="{
@@ -44,12 +44,12 @@
                 'text-success': task.status === 'finished',
                 'text-warning': task.status === 'in-progress',
               }"
-            >
-              {{ capitalizeFirstChar(task.status) }}
-            </span>
+            > -->
+              {{ capitalizeFirstChar(task._status) }}
+            <!-- </span> -->
           </td>
-          <td></td>
-          <td></td>
+          <td>{{ task._priority }}</td>
+          <td>{{ task._responsable }}</td>
           <td class="text-center">
             <div @click="deleteTask(index)">
               <span class="fa fa-trash pointer"></span>
@@ -62,7 +62,7 @@
           </td>
           <td class="text-center">
             <span :class="{ 'line-through': task.status === 'finished' }">
-              {{ task.name }}
+              {{ task._description }}
             </span>
           </td>
         </tr>
@@ -72,6 +72,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   name: "HelloWorld",
   props: {
@@ -84,20 +85,7 @@ export default {
       editedTask: null,
       statuses: ["to-do", "in-progress", "finished"],
       /* Status could be: 'to-do' / 'in-progress' / 'finished' */
-      tasks: [
-        {
-          name: "",
-          status: "to-do",
-        },
-        {
-          name: "",
-          status: "to-do",
-        },
-        {
-          name: "",
-          status: "to-do",
-        },
-      ],
+      tasks: null
     };
   },
 
@@ -105,6 +93,10 @@ export default {
     /**
      * Capitalize first character
      */
+     list(){
+      axios.get('http://localhost:3000/tasks')
+      .then(res => this.tasks = res.data.obj);
+    },
     capitalizeFirstChar(str) {
       return str.charAt(0).toUpperCase() + str.slice(1);
     },
@@ -154,6 +146,9 @@ export default {
       this.task = "";
     },
   },
+  mounted(){
+        this.list();
+    }
 };
 </script>
 
