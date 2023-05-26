@@ -11,6 +11,7 @@ import UserProfile from 'src/pages/UserProfile.vue'
 import CreateUser from 'src/pages/CreateUser.vue'
 import CreateProject from 'src/pages/CreateProject.vue'
 import LoginPage from 'src/pages/LoginPage.vue'
+import CreateTask from 'src/pages/CreateTask.vue'
 
 const routes = [
   {
@@ -62,7 +63,12 @@ const routes = [
         path: 'create-project',
         name: 'Create Project',
         component: CreateProject
-      }
+      },
+      {
+        path: 'create-task',
+        name: 'Create Task',
+        component: CreateTask
+      },
     ]
   },
   {
