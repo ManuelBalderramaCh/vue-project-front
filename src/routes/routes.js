@@ -12,12 +12,13 @@ import CreateUser from 'src/pages/CreateUser.vue'
 import CreateProject from 'src/pages/CreateProject.vue'
 import LoginPage from 'src/pages/LoginPage.vue'
 import CreateTask from 'src/pages/CreateTask.vue'
+import EditTask from 'src/pages/EditTask.vue'
 
 const routes = [
   {
     path: '/',
     component: DashboardLayout,
-    redirect: '/admin/overview'
+    redirect: '/login'
   },
   {
     path: '/admin',
@@ -38,6 +39,11 @@ const routes = [
         path: 'user/:id',
         name: 'User',
         component: UserProfile
+      },
+      {
+        path: 'task/:id',
+        name: 'EditTask',
+        component: EditTask
       },
       {
         path: 'table-list',
